@@ -26,6 +26,11 @@ to [race@80-days-in-80-days.com] with the following information:
 
 * The name you want us to use to refer to you in the standings.
 * The time zone you want to play in.
+* Your favorite color ([hex code preferred]).
+* An emoji to represent you, or some other small icon that won't get me sued for
+  copyright violation.
+
+[hex code preferred]: https://htmlcolorcodes.com/color-picker/
 
 Once every real-time day, you may play the game until the in-game day ticks
 over. Once it does, take a screenshot of your progress, then immediately save
