@@ -2,6 +2,7 @@ module.exports = function (config) {
     config.setUseGitIgnore(false);
 
     config.addPassthroughCopy({ "source/images/*": "/images" });
+    config.addPassthroughCopy({ "source/CNAME": "/CNAME" });
 
     if (process.env.NODE_ENV === "dev") {
         config.addPassthroughCopy({ "source/css": "/css" }); // uncompiled
