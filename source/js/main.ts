@@ -18,6 +18,26 @@ const cities: City[] = [
   {name: "London", lat: 51.5072, long: 0.1276}
 ];
 
+const citiesByName: Record<string, City> = {};
+for (const city of cities) {
+  citiesByName[city.name] = city;
+}
+
+interface Player {
+  name: string;
+  city: City;
+  pin: HTMLCanvasElement
+}
+
+const pinBuilder = new Cesium.PinBuilder();
+const players: Player[] = [
+  {
+    name: "Natalie",
+    city: citiesByName['London'],
+    pin: pinBuilder.fromText('🌿', Cesium.Color.BLUE, 40)
+  },
+];
+
 // Start focused on London
 Cesium.Camera.DEFAULT_VIEW_RECTANGLE = new Cesium.Rectangle(
   degToRad(0.1276),
@@ -52,6 +72,32 @@ for (const city of cities) {
       pixelOffset: new Cesium.Cartesian2(-6, -5),
       horizontalOrigin: Cesium.HorizontalOrigin.RIGHT,
       verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+    },
+  });
+}
+
+const playersPerCity: Record<string, number> = {};
+for (const player of players) {
+  playersPerCity[player.city.name] ??= 0;
+  const count = playersPerCity[player.city.name]++;
+
+  const r = count == 0 ? 0 : 4 + count;
+  const theta = Math.random() * 2 * Math.PI;
+  viewer.entities.add({
+    name: player.name,
+    position: Cesium.Cartesian3.fromDegrees(player.city.long, player.city.lat),
+    billboard: {
+      image: player.pin,
+      verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
+      pixelOffset: new Cesium.Cartesian2(
+        r * Math.cos(theta),
+        r * Math.sin(theta),
+      ),
+      eyeOffset: new Cesium.Cartesian3(
+        0,
+        0,
+        -50 // -50 Z positions labels above city circles
+      ),
     },
   });
 }

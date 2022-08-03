@@ -27,3 +27,7 @@ body {
 .date {
     color: hsl(359deg 90% 44%);
 }
+
+#cesiumContainer .cesium-infoBox-camera {
+    display: none;
+}
