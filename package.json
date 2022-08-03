@@ -42,6 +42,7 @@
         "defaults"
     ],
     "dependencies": {
-        "cesium": "^1.96.0"
+        "cesium": "^1.96.0",
+        "openmoji": "^14.0.0"
     }
 }

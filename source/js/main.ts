@@ -30,31 +30,71 @@ interface Player {
 }
 
 const pinBuilder = new Cesium.PinBuilder();
+function emojiPin(emoji: string, color: Cesium.Color): HTMLCanvasElement {
+  const canvas = pinBuilder.fromColor(color, 40);
+  const context2d = canvas.getContext("2d")!;
+  context2d.font = "16px sans-serif";
+  context2d.fillText(emoji, 10, 18);
+  return canvas;
+}
+
+async function imagePin(url: string, color: Cesium.Color): Promise<HTMLCanvasElement> {
+  const size = 40;
+  const canvas = pinBuilder.fromColor(color, size);
+  const image = await Cesium.Resource.fetchImage({url}) as HTMLImageElement;
+  const context2d = canvas.getContext("2d")!;
+
+  const imageSize = size / 2.5;
+  let sizeX = imageSize;
+  let sizeY = imageSize;
+  if (image.width > image.height) {
+    sizeY = imageSize * (image.height / image.width);
+  } else if (image.width < image.height) {
+    sizeX = imageSize * (image.width / image.height);
+  }
+
+  //x and y are the center of the pin box
+  const x = Math.round((size - sizeX) / 2);
+  const y = Math.round((7 / 24) * size - sizeY / 2);
+
+  context2d.drawImage(image, x, y, sizeX, sizeY);
+
+  return canvas;
+}
+
 const players: Player[] = [
   {
-    name: "Liz",
+    name: "Liz 🦭",
     city: citiesByName['London'],
-    pin: pinBuilder.fromText('🦭', Cesium.Color.fromBytes(0x00, 0x63, 0x7B, 0xFF), 40),
+    pin: await imagePin(
+      '/images/openmoji/1F9AD.svg',
+      Cesium.Color.fromBytes(0x00, 0x63, 0x7B, 0xFF),
+    ),
   },
   {
-    name: "Natalie",
+    name: "Natalie 🌿",
     city: citiesByName['London'],
-    pin: pinBuilder.fromText('🌿', Cesium.Color.BLUE, 40),
+    pin: emojiPin('🌿', Cesium.Color.BLUE),
   },
   {
-    name: "RAT",
+    name: "RAT 🐀",
     city: citiesByName['London'],
-    pin: pinBuilder.fromText('🐀', Cesium.Color.fromBytes(0x70, 0xFF, 0x61, 0xFF), 40),
+    pin: emojiPin('🐀', Cesium.Color.fromBytes(0x70, 0xFF, 0x61, 0xFF)),
   },
   {
-    name: "bcj",
+    name: "wing 🥑",
     city: citiesByName['London'],
-    pin: pinBuilder.fromText('👻', Cesium.Color.fromBytes(0x66, 0x00, 0xAA, 0xFF), 40),
+    pin: emojiPin('🥑', Cesium.Color.fromBytes(0x00, 0x80, 0x80, 0xFF)),
   },
   {
-    name: "Zandra",
+    name: "bcj 👻",
     city: citiesByName['London'],
-    pin: pinBuilder.fromText('🐭', Cesium.Color.fromBytes(0x33, 0xCC, 0xFF, 0xFF), 40),
+    pin: emojiPin('👻', Cesium.Color.fromBytes(0x66, 0x00, 0xAA, 0xFF)),
+  },
+  {
+    name: "Zandra 🐭",
+    city: citiesByName['London'],
+    pin: emojiPin('🐭', Cesium.Color.fromBytes(0x33, 0xCC, 0xFF, 0xFF)),
   },
 ];
 

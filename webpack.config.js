@@ -13,6 +13,9 @@ module.exports = {
     // Enable webpack-friendly use of require in Cesium
     toUrlUndefined: true
   },
+  experiments: {
+    topLevelAwait: true,
+  },
   module: {
     rules: [
       {

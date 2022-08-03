@@ -6,9 +6,9 @@
     "useUnknownInCatchVariables": false,
     "declaration": false,
     "lib": ["dom"],
-    "module": "es6",
+    "module": "esnext",
     "moduleResolution": "node",
-    "target": "es6"
+    "target": "es2017"
   },
   "include": [
     "**/*.ts"
