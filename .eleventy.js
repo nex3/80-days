@@ -3,15 +3,10 @@ module.exports = function (config) {
 
     config.addPassthroughCopy({ "source/images/*": "/images" });
     config.addPassthroughCopy({ "source/CNAME": "/CNAME" });
-
-    if (process.env.NODE_ENV === "dev") {
-        config.addPassthroughCopy({ "source/css": "/css" }); // uncompiled
-    } else {
-        // Compiled CSS is output directly to the build directory with PostCSS
-    }
+    config.addPassthroughCopy({ "node_modules/cesium/Build/Cesium": "/Cesium" });
 
     return {
-        templateFormats: ["md", "html", "js"],
+        templateFormats: ["md", "html", "js", "css"],
         dir: {
             input: "source",
         },

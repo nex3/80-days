@@ -15,6 +15,8 @@ real-world days!
 
 <p class="begins">The race begins <span class="date">Saturday 13 August</span>!</p>
 
+<div id="cesiumContainer"></div>
+
 ## How to Participate
 
 The race is open access to anyone who wants to join. To sign up, send an email
