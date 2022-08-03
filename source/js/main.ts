@@ -32,9 +32,29 @@ interface Player {
 const pinBuilder = new Cesium.PinBuilder();
 const players: Player[] = [
   {
+    name: "Liz",
+    city: citiesByName['London'],
+    pin: pinBuilder.fromText('🦭', Cesium.Color.fromBytes(0x00, 0x63, 0x7B, 0xFF), 40),
+  },
+  {
     name: "Natalie",
     city: citiesByName['London'],
-    pin: pinBuilder.fromText('🌿', Cesium.Color.BLUE, 40)
+    pin: pinBuilder.fromText('🌿', Cesium.Color.BLUE, 40),
+  },
+  {
+    name: "RAT",
+    city: citiesByName['London'],
+    pin: pinBuilder.fromText('🐀', Cesium.Color.fromBytes(0x70, 0xFF, 0x61, 0xFF), 40),
+  },
+  {
+    name: "bcj",
+    city: citiesByName['London'],
+    pin: pinBuilder.fromText('👻', Cesium.Color.fromBytes(0x66, 0x00, 0xAA, 0xFF), 40),
+  },
+  {
+    name: "Zandra",
+    city: citiesByName['London'],
+    pin: pinBuilder.fromText('🐭', Cesium.Color.fromBytes(0x33, 0xCC, 0xFF, 0xFF), 40),
   },
 ];
 
@@ -96,7 +116,7 @@ for (const player of players) {
       eyeOffset: new Cesium.Cartesian3(
         0,
         0,
-        -50 // -50 Z positions labels above city circles
+        -50 - count // -50 Z positions labels above city circles
       ),
     },
   });
