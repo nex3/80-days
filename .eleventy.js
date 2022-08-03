@@ -1,8 +1,4 @@
-const img = require("./shortcodes/img.js");
-
 module.exports = function (config) {
-    config.addShortcode("img", img);
-
     config.setUseGitIgnore(false);
 
     // config.addPassthroughCopy({ "source/images/*": "/images" });

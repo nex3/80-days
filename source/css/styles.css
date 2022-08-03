@@ -1,6 +1,27 @@
-@import "./base.css";
+html {
+    padding: 2%;
+    box-sizing: border-box;
+    font-family: system-ui;
+    line-height: 1.5;
+}
 
-img {
-    width: 300px;
-    height: auto;
+body {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+.begins {
+    font-size: 2rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.date {
+    color: hsl(359deg 90% 44%);
 }
