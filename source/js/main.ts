@@ -162,6 +162,22 @@ const cities: City[] = [
   {name: "Tromsø", lat: 69.6492, long: 18.9553},
   {name: "Tsaritsyn", lat: 48.7080, long: 44.5133},
   {name: "Tunis", lat: 36.8065, long: 10.1815},
+  {name: "Ujiji", lat: -4.9115, long: 29.6746},
+  {name: "Ulundi", lat: -28.2997, long: 31.4342},
+  {name: "Urga", lat: 47.8864, long: 106.9057},
+  {name: "Ussuriysk", lat: 43.8015, long: 131.9405},
+  {name: "Venice", lat: 45.4408, long: 12.3155},
+  {name: "Vienna", lat: 43.3188, long: 11.3308},
+  {name: "Vladivostok", lat: 43.1332, long: 131.9113},
+  {name: "Wadi Halfa", lat: 21.7991, long: 31.3713},
+  {name: "Waltair", lat: 17.6868, long: 83.2185},
+  {name: "Warsaw", lat: 52.2297, long: 21.0122},
+  {name: "Washington", lat: 38.9072, long: -77.0369},
+  {name: "Winisk", lat: 55.2667, long: -85.2000},
+  {name: "Winnipeg", lat: 49.8954, long: -97.1385},
+  {name: "Yadanabon", lat: 21.9588, long: 96.0891},
+  {name: "Yokohama", lat: 35.4437, long: 139.6380},
+  {name: "Zurich", lat: 47.3769, long: 8.5417},
 ];
 
 const citiesByName: Record<string, City> = {};
