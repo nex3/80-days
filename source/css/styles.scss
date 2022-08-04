@@ -31,8 +31,9 @@ body {
 #cesiumContainer {
     height: 0;
     width: 100%;
-    padding-bottom: 80%;
-    max-height: 800px;
+    // Golden ratio baybee
+    padding-bottom: 61.803398875%;
+    max-height: 800px * 0.61803398875;
     position: relative;
     border-radius: 10px;
     border: 2px solid black;
