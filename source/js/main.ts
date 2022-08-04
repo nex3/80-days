@@ -160,7 +160,7 @@ const players: Player[] = [
     name: "Liz 🦭",
     city: citiesByName['London'],
     pin: await imagePin(
-      '/images/openmoji/1F9AD.svg',
+      '/images/liz.webp',
       Cesium.Color.fromBytes(0x00, 0x63, 0x7B, 0xFF),
     ),
   },
