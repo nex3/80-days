@@ -1,6 +1,7 @@
 (window as any).CESIUM_BASE_URL = '/Cesium'; 
 
 import * as Cesium from 'cesium';
+import {upperCase} from 'upper-case';
 
 Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3YTQzNWEwNi01YzM0LTRmZjItYjZmMy1jOTExNTllNTY4MzYiLCJpZCI6MTAzNDI4LCJpYXQiOjE2NTk0OTU4OTN9.-GZMqtr9hUYcNVSPYgGwK5eFNhr4-QN6p7gWB5hAPpw';
 
@@ -298,30 +299,34 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
   animation: false,
 });
 
+const entitiesByCity: Record<string, Cesium.Entity> = {};
+const defaultLabelTranslucency = new Cesium.NearFarScalar(1.5e6, 1, 2.5e6, 0);
 for (const city of cities) {
-  viewer.entities.add({
+  entitiesByCity[city.name] = viewer.entities.add({
     name: city.name,
     position: Cesium.Cartesian3.fromDegrees(city.long, city.lat),
     point: {
       pixelSize: 8,
       color: Cesium.Color.RED.withAlpha(0.01),
-      outlineColor: Cesium.Color.WHITE.withAlpha(0.8),
+      outlineColor: playersByCity[city.name]
+        ? Cesium.Color.WHITE.withAlpha(0.8)
+        : Cesium.Color.WHITE.withAlpha(0.6),
       outlineWidth: 2,
       scaleByDistance: new Cesium.NearFarScalar(1.5e2, 3, 7e6, 0.5),
     },
     label: {
-      text: city.name,
+      text: upperCase(city.name),
+      font: "20px Helvetica",
       style: Cesium.LabelStyle.FILL_AND_OUTLINE,
-      scaleByDistance: new Cesium.NearFarScalar(
-        1.5e2,
-        playersByCity[city.name] ? 2 : 1.5,
-        playersByCity[city.name] ? 7e6 : 6e6,
-        0.2),
       translucencyByDistance: playersByCity[city.name]
-        ? undefined
-        : new Cesium.NearFarScalar(1.5e6, 1, 3.5e6, 0),
-      pixelOffset: new Cesium.Cartesian2(-6, -5),
-      horizontalOrigin: Cesium.HorizontalOrigin.RIGHT,
+        ? new Cesium.NearFarScalar(3.5e6, 1, 2.5e7, 0)
+        : defaultLabelTranslucency,
+      pixelOffset: playersByCity[city.name]
+        ? new Cesium.Cartesian2(-6, -5)
+        : new Cesium.Cartesian2(0, -25),
+      horizontalOrigin: playersByCity[city.name]
+        ? Cesium.HorizontalOrigin.RIGHT
+        : Cesium.HorizontalOrigin.CENTER,
       verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
     },
   });
@@ -349,3 +354,34 @@ for (const player of players) {
     },
   });
 }
+
+function findHoveredCity(movement: Cesium.ScreenSpaceEventHandler.MotionEvent): [City, Cesium.Entity]|[] {
+  const pickedObject = viewer.scene.pick(movement.endPosition);
+  if (!Cesium.defined(pickedObject)) return [];
+  if (!(pickedObject.primitive instanceof Cesium.PointPrimitive)) return [];
+
+  console.log(pickedObject);
+  for (const [cityName, entity] of Object.entries(entitiesByCity)) {
+    if (pickedObject.id === entity) return [citiesByName[cityName], entity];
+  }
+  return [];
+}
+
+const hovered = new Set<Cesium.Entity>();
+const handler = new Cesium.ScreenSpaceEventHandler(viewer.scene.canvas);
+handler.setInputAction((movement: Cesium.ScreenSpaceEventHandler.MotionEvent) => {
+  const [city, entity] = findHoveredCity(movement);
+  
+  for (const prev of hovered) {
+    if (prev === entity) continue;
+    (prev as any).point.outlineColor = Cesium.Color.WHITE.withAlpha(0.6);
+    (prev as any).label.translucencyByDistance = defaultLabelTranslucency;
+  }
+
+  if (city && entity) {
+    if (playersByCity[city.name]) return;
+    (entity as any).point.outlineColor = Cesium.Color.WHITE;
+    (entity as any).label.translucencyByDistance = null;
+    hovered.add(entity);
+  }
+}, Cesium.ScreenSpaceEventType.MOUSE_MOVE);

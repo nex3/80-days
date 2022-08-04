@@ -43,6 +43,7 @@
     ],
     "dependencies": {
         "cesium": "^1.96.0",
-        "openmoji": "^14.0.0"
+        "openmoji": "^14.0.0",
+        "upper-case": "^2.0.2"
     }
 }
