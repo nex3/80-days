@@ -228,6 +228,16 @@ async function imagePin(url: string, color: Cesium.Color): Promise<HTMLCanvasEle
 
 const players: Player[] = [
   {
+    name: "Ronja 🐢",
+    city: citiesByName['London'],
+    pin: emojiPin('🐢', Cesium.Color.fromBytes(0x00, 0x9D, 0x9D, 0xFF))
+  },
+  {
+    name: "wayward 🎻",
+    city: citiesByName['London'],
+    pin: emojiPin('🎻', Cesium.Color.fromBytes(0x9A, 0x86, 0xA3, 0xFF))
+  },
+  {
     name: "jae",
     city: citiesByName['London'],
     pin: await imagePin(
