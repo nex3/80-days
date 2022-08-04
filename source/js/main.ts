@@ -1,6 +1,8 @@
 (window as any).CESIUM_BASE_URL = '/Cesium'; 
 
 import * as Cesium from 'cesium';
+import PlaneGeometry from 'cesium/Source/Core/PlaneGeometry';
+import Entity from 'cesium/Source/DataSources/Entity';
 import {upperCase} from 'upper-case';
 
 Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3YTQzNWEwNi01YzM0LTRmZjItYjZmMy1jOTExNTllNTY4MzYiLCJpZCI6MTAzNDI4LCJpYXQiOjE2NTk0OTU4OTN9.-GZMqtr9hUYcNVSPYgGwK5eFNhr4-QN6p7gWB5hAPpw';
@@ -189,8 +191,9 @@ for (const city of cities) {
 
 interface Player {
   name: string;
-  city: City;
-  pin: HTMLCanvasElement
+  pin: HTMLCanvasElement;
+  color: Cesium.Color;
+  path: string[];
 }
 
 const pinBuilder = new Cesium.PinBuilder();
@@ -229,17 +232,20 @@ async function imagePin(url: string, color: Cesium.Color): Promise<HTMLCanvasEle
 const players: Player[] = [
   {
     name: "Ronja 🐢",
-    city: citiesByName['London'],
-    pin: emojiPin('🐢', Cesium.Color.fromBytes(0x00, 0x9D, 0x9D, 0xFF))
+    path: ['London'],
+    color: Cesium.Color.fromBytes(0x00, 0x9D, 0x9D, 0xFF),
+    pin: emojiPin('🐢', Cesium.Color.fromBytes(0x00, 0x9D, 0x9D, 0xFF)),
   },
   {
     name: "wayward 🎻",
-    city: citiesByName['London'],
-    pin: emojiPin('🎻', Cesium.Color.fromBytes(0x9A, 0x86, 0xA3, 0xFF))
+    path: ['London'],
+    color: Cesium.Color.fromBytes(0x9A, 0x86, 0xA3, 0xFF),
+    pin: emojiPin('🎻', Cesium.Color.fromBytes(0x9A, 0x86, 0xA3, 0xFF)),
   },
   {
     name: "jae",
-    city: citiesByName['London'],
+    path: ['London'],
+    color: Cesium.Color.fromBytes(0x48, 0xD1, 0xCC, 0xFF),
     pin: await imagePin(
       '/images/eggbug.png',
       Cesium.Color.fromBytes(0x48, 0xD1, 0xCC, 0xFF),
@@ -247,12 +253,14 @@ const players: Player[] = [
   },
   {
     name: "@garak ꙮ",
-    city: citiesByName['London'],
+    path: ['London'],
+    color: Cesium.Color.fromBytes(0x6B, 0xEC, 0x58, 0xFF),
     pin: emojiPin('ꙮ', Cesium.Color.fromBytes(0x6B, 0xEC, 0x58, 0xFF)),
   },
   {
     name: "Liz 🦭",
-    city: citiesByName['London'],
+    path: ['London'],
+    color: Cesium.Color.fromBytes(0x00, 0x63, 0x7B, 0xFF),
     pin: await imagePin(
       '/images/liz.webp',
       Cesium.Color.fromBytes(0x00, 0x63, 0x7B, 0xFF),
@@ -260,34 +268,44 @@ const players: Player[] = [
   },
   {
     name: "Natalie 🌿",
-    city: citiesByName['London'],
+    path: ['London'],
+    color: Cesium.Color.BLUE,
     pin: emojiPin('🌿', Cesium.Color.BLUE),
   },
   {
     name: "RAT 🐀",
-    city: citiesByName['London'],
+    path: ['London'],
+    color: Cesium.Color.fromBytes(0x70, 0xFF, 0x61, 0xFF),
     pin: emojiPin('🐀', Cesium.Color.fromBytes(0x70, 0xFF, 0x61, 0xFF)),
   },
   {
     name: "wing 🥑",
-    city: citiesByName['London'],
+    path: ['London'],
+    color: Cesium.Color.fromBytes(0x00, 0x80, 0x80, 0xFF),
     pin: emojiPin('🥑', Cesium.Color.fromBytes(0x00, 0x80, 0x80, 0xFF)),
   },
   {
     name: "bcj 👻",
-    city: citiesByName['London'],
+    path: ['London'],
+    color: Cesium.Color.fromBytes(0x66, 0x00, 0xAA, 0xFF),
     pin: emojiPin('👻', Cesium.Color.fromBytes(0x66, 0x00, 0xAA, 0xFF)),
   },
   {
     name: "Zandra 🐭",
-    city: citiesByName['London'],
+    path: ['London'],
+    color: Cesium.Color.fromBytes(0x33, 0xCC, 0xFF, 0xFF),
     pin: emojiPin('🐭', Cesium.Color.fromBytes(0x33, 0xCC, 0xFF, 0xFF)),
   },
 ];
 
+function cityForPlayer(player: Player): City {
+  const path = player.path;
+  return citiesByName[path[path.length - 1]]!;
+}
+
 const playersByCity: Record<string, Player[]> = {};
 for (const player of players) {
-  (playersByCity[player.city.name] ??= []).push(player);
+  (playersByCity[cityForPlayer(player).name] ??= []).push(player);
 }
 
 const viewer = new Cesium.Viewer('cesiumContainer', {
@@ -348,13 +366,15 @@ for (const city of cities) {
   });
 }
 
+const pathsByPlayerEntity = new Map<Cesium.Entity, Cesium.Entity>();
 for (const player of players) {
-  const count = playersByCity[player.city.name]!.length;
-  const r = count === 0 ? 0 : Math.random() * (6 + count);
+  const city = cityForPlayer(player);
+  const count = playersByCity[city.name]!.length;
+  const r = count === 1 ? 0 : Math.random() * (6 + count);
   const theta = Math.random() * 2 * Math.PI;
-  viewer.entities.add({
+  const playerEntity = viewer.entities.add({
     name: player.name,
-    position: Cesium.Cartesian3.fromDegrees(player.city.long, player.city.lat),
+    position: Cesium.Cartesian3.fromDegrees(city.long, city.lat),
     billboard: {
       image: player.pin,
       verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
@@ -369,6 +389,21 @@ for (const player of players) {
       ),
     },
   });
+
+  if (player.path.length > 1) {
+    const pathEntity = viewer.entities.add({
+      name: `${player.name}'s path`,
+      polyline: {
+        positions: player.path.map(name => {
+          const city = citiesByName[name];
+          return Cesium.Cartesian3.fromDegrees(city.long, city.lat);
+        }),
+        width: 4,
+        material: player.color.withAlpha(0.5),
+      }
+    });
+    pathsByPlayerEntity.set(playerEntity, pathEntity);
+  }
 }
 
 function findHoveredCity(movement: Cesium.ScreenSpaceEventHandler.MotionEvent): [City, Cesium.Entity]|[] {
@@ -401,3 +436,17 @@ handler.setInputAction((movement: Cesium.ScreenSpaceEventHandler.MotionEvent) =>
     hovered.add(entity);
   }
 }, Cesium.ScreenSpaceEventType.MOUSE_MOVE);
+
+let highlightedPath: Cesium.Entity|undefined;
+viewer.selectedEntityChanged.addEventListener(entity => {
+  if (highlightedPath) {
+    const color = (highlightedPath as any).polyline.material.color;
+    color.setValue(color.getValue().withAlpha(0.5));
+  }
+
+  highlightedPath = pathsByPlayerEntity.get(entity);
+  if (!highlightedPath) return;
+
+  const color = (highlightedPath as any).polyline.material.color;
+  color.setValue(color.getValue().withAlpha(1));
+});
