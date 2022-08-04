@@ -28,6 +28,18 @@ body {
     color: hsl(359deg 90% 44%);
 }
 
-#cesiumContainer .cesium-infoBox-camera {
-    display: none;
+#cesiumContainer {
+    height: 0;
+    width: 100%;
+    padding-bottom: 80%;
+    max-height: 800px;
+    position: relative;
+
+    .cesium-viewer {
+        position: absolute;
+    }
+
+    .cesium-infoBox-camera {
+        display: none;
+    }
 }
