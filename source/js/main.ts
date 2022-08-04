@@ -5,10 +5,6 @@ import {upperCase} from 'upper-case';
 
 Cesium.Ion.defaultAccessToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3YTQzNWEwNi01YzM0LTRmZjItYjZmMy1jOTExNTllNTY4MzYiLCJpZCI6MTAzNDI4LCJpYXQiOjE2NTk0OTU4OTN9.-GZMqtr9hUYcNVSPYgGwK5eFNhr4-QN6p7gWB5hAPpw';
 
-function degToRad(deg: number): number {
-  return deg * Math.PI / 180;
-}
-
 interface City {
   name: string;
   lat: number;
@@ -284,19 +280,28 @@ for (const player of players) {
   (playersByCity[player.city.name] ??= []).push(player);
 }
 
-// Start focused on London
-Cesium.Camera.DEFAULT_VIEW_RECTANGLE = new Cesium.Rectangle(
-  degToRad(0.1276),
-  degToRad(51.5072),
-  degToRad(0.1276),
-  degToRad(51.5072)
-);
-
 const viewer = new Cesium.Viewer('cesiumContainer', {
   baseLayerPicker: false,
   geocoder: false,
   timeline: false,
   animation: false,
+  homeButton: false,
+});
+
+const startingZoom = 8;
+const offset = 15;
+viewer.camera.setView({
+  destination: Cesium.Rectangle.fromDegrees(
+    citiesByName['London'].long - startingZoom,
+    citiesByName['London'].lat - startingZoom - offset,
+    citiesByName['London'].long + startingZoom,
+    citiesByName['London'].lat + startingZoom - offset,
+  ),
+  orientation: {
+      heading : 0,
+      pitch : Cesium.Math.toRadians(-60),    // default value (looking down)
+      roll : 0.0                             // default value
+  }
 });
 
 const entitiesByCity: Record<string, Cesium.Entity> = {};
