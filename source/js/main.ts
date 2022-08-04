@@ -297,6 +297,7 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
   animation: false,
   homeButton: false,
 });
+viewer.scene.screenSpaceCameraController.minimumZoomDistance = 3e5;
 
 const startingZoom = 8;
 const offset = 15;
