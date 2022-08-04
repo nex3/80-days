@@ -85,7 +85,7 @@ const cities: City[] = [
   {name: "Jeddah", lat: 21.4858, long: 39.1925},
   {name: "Kabul", lat: 34.5553, long: 69.2075},
   {name: "Karachi", lat: 24.8607, long: 67.0011},
-  {name: "Karimskaya", lat: 51, long: 0}, // TODO: find me by process of elimination in https://www.google.com/imgres?imgurl=https%3A%2F%2Fstatic.wikia.nocookie.net%2F80days%2Fimages%2F7%2F79%2FAlso_asia.jpg%2Frevision%2Flatest%3Fcb%3D20170303045745&imgrefurl=https%3A%2F%2F80days.fandom.com%2Fwiki%2FAsia&tbnid=S_DS4tf5aGongM&vet=12ahUKEwjVovyngaz5AhWzFTQIHZJOBCMQMygSegQIARBF..i&docid=RlAB4dfEJEK1NM&w=1080&h=1211&q=karimskaya%2080%20days&ved=2ahUKEwjVovyngaz5AhWzFTQIHZJOBCMQMygSegQIARBF
+  {name: "Karimskaya", lat: 56.6575, long: 124.7110},
   {name: "Khartoum", lat: 15.5007, long: 32.5599},
   {name: "Krasnovodsk", lat: 40.0337, long: 52.9759},
   {name: "Kristiania", lat: 59.9139, long: 10.7522},
@@ -299,7 +299,7 @@ for (const city of cities) {
     position: Cesium.Cartesian3.fromDegrees(city.long, city.lat),
     point: {
       pixelSize: 8,
-      color: Cesium.Color.RED.withAlpha(0),
+      color: Cesium.Color.RED.withAlpha(0.01),
       outlineColor: Cesium.Color.WHITE.withAlpha(0.8),
       outlineWidth: 2,
       scaleByDistance: new Cesium.NearFarScalar(1.5e2, 3, 7e6, 0.5),
@@ -312,6 +312,9 @@ for (const city of cities) {
         playersByCity[city.name] ? 2 : 1.5,
         playersByCity[city.name] ? 7e6 : 6e6,
         0.2),
+      translucencyByDistance: playersByCity[city.name]
+        ? undefined
+        : new Cesium.NearFarScalar(1.5e6, 1, 3.5e6, 0),
       pixelOffset: new Cesium.Cartesian2(-6, -5),
       horizontalOrigin: Cesium.HorizontalOrigin.RIGHT,
       verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
