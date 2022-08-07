@@ -8,6 +8,7 @@ interface PlayerOptions {
   color: Cesium.Color;
   path: string[];
   emoji?: string;
+  progress?: number;
 }
 
 export class Player {
@@ -15,6 +16,7 @@ export class Player {
   readonly pin: HTMLCanvasElement;
   readonly color: Cesium.Color;
   readonly path: string[];
+  readonly progress?: number;
 
   private constructor(
     name: string,
@@ -25,6 +27,7 @@ export class Player {
     this.color = options.color;
     this.path = options.path;
     this.pin = options.pin;
+    this.progress = options.progress;
   }
 
   static emoji(name: string, options: PlayerOptions & {emoji: string}): Player {
@@ -67,6 +70,11 @@ export class Player {
   get city(): City {
     const path = this.path;
     return citiesByName[path[path.length - 1]]!;
+  }
+
+  get prevCity(): City {
+    const path = this.path;
+    return citiesByName[path[path.length - 2]]!;
   }
 }
 

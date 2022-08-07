@@ -71,24 +71,47 @@ for (const city of cities) {
 
 const pathsByPlayerEntity = new Map<Cesium.Entity, Cesium.Entity>();
 for (const player of players) {
-  const count = player.city.name!.length;
-  const r = count === 1 ? 0 : Math.random() * (6 + count);
-  const theta = Math.random() * 2 * Math.PI;
+  let offsetX: number;
+  let offsetY: number;
+  let position: Cesium.Cartesian3;
+  if (player.progress) {
+    offsetX = 0;
+    offsetY = 0;
+    const prev = Cesium.Cartesian3.fromDegrees(
+      player.prevCity.long,
+      player.prevCity.lat
+    );
+    const next = Cesium.Cartesian3.fromDegrees(
+      player.city.long,
+      player.city.lat
+    );
+    const cartesianMidpoint = new Cesium.Cartesian3();
+    Cesium.Cartesian3.lerp(prev, next, player.progress, cartesianMidpoint);
+    const cartographicMidpoint =
+      Cesium.Cartographic.fromCartesian(cartesianMidpoint);
+    position = Cesium.Cartesian3.fromRadians(
+      cartographicMidpoint.longitude,
+      cartographicMidpoint.latitude,
+      0.0
+    );
+  } else {
+    const count = player.progress ? 0 : player.city.name!.length;
+    const r = count === 1 ? 0 : Math.random() * (6 + count);
+    const theta = Math.random() * 2 * Math.PI;
+    offsetX = r * Math.cos(theta);
+    offsetY = r * Math.sin(theta);
+    position = Cesium.Cartesian3.fromDegrees(player.city.long, player.city.lat);
+  }
+
   const playerEntity = viewer.entities.add({
     name: player.name,
-    position: Cesium.Cartesian3.fromDegrees(player.city.long, player.city.lat),
+    position,
     billboard: {
       image: player.pin,
       verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-      pixelOffset: new Cesium.Cartesian2(
-        r * Math.cos(theta),
-        r * Math.sin(theta)
-      ),
-      eyeOffset: new Cesium.Cartesian3(
-        0,
-        0,
-        -50 // -50 Z positions labels above city circles
-      ),
+      pixelOffset: new Cesium.Cartesian2(offsetX, offsetY),
+      // -50 Z positions labels above city circles
+      eyeOffset: new Cesium.Cartesian3(0, 0, -50),
     },
   });
 
