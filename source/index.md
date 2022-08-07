@@ -42,6 +42,8 @@ If you're playing on a desktop computer, you can fake a new game by renaming you
 save directory (`%UserProfile%\AppData\LocalLow\Inkle Studios` if you're using
 Steam on Windows) to something different while you're playing the race.
 
+**Note:** The game cycles through seven different seeds, but the Seed 1 you get after completing/restarting 7 times _is not the same_ as the Seed 1 you get from a fresh save. So make sure you've got a totally fresh save when you start the race!
+
 ## Rules
 
 ### Winning
@@ -93,3 +95,15 @@ Steam on Windows) to something different while you're playing the race.
   choosing.
 
 * If my wife or I win, we'll give the prize to the next runner-up.
+
+## Tips & Tricks
+
+* **Time is ticking:** Time will pass at about one minute per second when you're in town, even if you're looking at the map. It'll pass even faster if you're browsing at the market. If you're feeling pressed for time, quickly check the information you need and then pause the game to make your decisions.
+
+* **Departure times:** Every mode of travel from one city to the next has a departure time, but you'll need to actually click on the Embark button to see them. Don't worry, there's a separate confirmation before you actually leave!
+
+* **Get some cash**: Money is one of the fundamental resources, and the £4,000 you start with won't last you your journey. You can buy and sell items in the market, often for very substantial profits. Once you've got around £10,000, though, you can probably avoid going out of your way to earn more.
+
+* **Pack lightly**: Extra suitcases aren't very expensive, but you can only carry so many with you on different modes of transportation. That said, you can often spend a few extra pounds to buy some extra luggage room.
+
+* **Many ways forward**: Don't feel obligated to head due east all the time. The game has ways of making up lost time if you go exploring.
