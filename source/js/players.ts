@@ -67,6 +67,25 @@ export class Player {
     return new Player(name, {...options, pin});
   }
 
+  get location(): Cesium.Cartesian3 {
+    const next = Cesium.Cartesian3.fromDegrees(this.city.long, this.city.lat);
+    if (!this.progress) return next;
+
+    const prev = Cesium.Cartesian3.fromDegrees(
+      this.prevCity.long,
+      this.prevCity.lat
+    );
+    const cartesianMidpoint = new Cesium.Cartesian3();
+    Cesium.Cartesian3.lerp(prev, next, this.progress, cartesianMidpoint);
+    const cartographicMidpoint =
+      Cesium.Cartographic.fromCartesian(cartesianMidpoint);
+    return Cesium.Cartesian3.fromRadians(
+      cartographicMidpoint.longitude,
+      cartographicMidpoint.latitude,
+      0.0
+    );
+  }
+
   get city(): City {
     const path = this.path;
     return citiesByName[path[path.length - 1]]!;
@@ -138,7 +157,8 @@ export const players: Player[] = [
     emoji: '🦭',
     image: '/images/liz.webp',
     color: rgb('00637b'),
-    path: ['London'],
+    path: ['London', 'Paris', 'Berlin'],
+    progress: 0.7,
   }),
   Player.emoji('Natalie', {
     emoji: '🌿',

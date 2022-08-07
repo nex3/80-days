@@ -6,7 +6,7 @@ import * as Cesium from 'cesium';
 import {upperCase} from 'upper-case';
 
 import {City, cities, citiesByName} from './cities';
-import {playersByCity, players} from './players';
+import {Player, playersByCity, players} from './players';
 
 Cesium.Ion.defaultAccessToken =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3YTQzNWEwNi01YzM0LTRmZjItYjZmMy1jOTExNTllNTY4MzYiLCJpZCI6MTAzNDI4LCJpYXQiOjE2NTk0OTU4OTN9.-GZMqtr9hUYcNVSPYgGwK5eFNhr4-QN6p7gWB5hAPpw';
@@ -70,61 +70,48 @@ for (const city of cities) {
 }
 
 const pathsByPlayerEntity = new Map<Cesium.Entity, Cesium.Entity>();
+const playersByEntity = new Map<Cesium.Entity, Player>();
 for (const player of players) {
-  let offsetX: number;
-  let offsetY: number;
-  let position: Cesium.Cartesian3;
-  if (player.progress) {
-    offsetX = 0;
-    offsetY = 0;
-    const prev = Cesium.Cartesian3.fromDegrees(
-      player.prevCity.long,
-      player.prevCity.lat
-    );
-    const next = Cesium.Cartesian3.fromDegrees(
-      player.city.long,
-      player.city.lat
-    );
-    const cartesianMidpoint = new Cesium.Cartesian3();
-    Cesium.Cartesian3.lerp(prev, next, player.progress, cartesianMidpoint);
-    const cartographicMidpoint =
-      Cesium.Cartographic.fromCartesian(cartesianMidpoint);
-    position = Cesium.Cartesian3.fromRadians(
-      cartographicMidpoint.longitude,
-      cartographicMidpoint.latitude,
-      0.0
-    );
-  } else {
-    const count = player.progress ? 0 : player.city.name!.length;
-    const r = count === 1 ? 0 : Math.random() * (6 + count);
-    const theta = Math.random() * 2 * Math.PI;
-    offsetX = r * Math.cos(theta);
-    offsetY = r * Math.sin(theta);
-    position = Cesium.Cartesian3.fromDegrees(player.city.long, player.city.lat);
-  }
-
+  const count = player.progress ? 0 : player.city.name!.length;
+  const r = count === 1 ? 0 : Math.random() * (6 + count);
+  const theta = Math.random() * 2 * Math.PI;
   const playerEntity = viewer.entities.add({
     name: player.name,
-    position,
+    position: player.location,
     billboard: {
       image: player.pin,
       verticalOrigin: Cesium.VerticalOrigin.BOTTOM,
-      pixelOffset: new Cesium.Cartesian2(offsetX, offsetY),
+      pixelOffset: new Cesium.Cartesian2(
+        r * Math.cos(theta),
+        r * Math.sin(theta)
+      ),
       // -50 Z positions labels above city circles
       eyeOffset: new Cesium.Cartesian3(0, 0, -50),
     },
   });
+  playersByEntity.set(playerEntity, player);
 
   if (player.path.length > 1) {
+    const positions = player.path.map(name => {
+      const city = citiesByName[name];
+      return Cesium.Cartesian3.fromDegrees(city.long, city.lat);
+    });
+    if (player.progress) {
+      positions[positions.length - 1] = player.location;
+    }
+
     const pathEntity = viewer.entities.add({
       name: `${player.name}'s path`,
       polyline: {
-        positions: player.path.map(name => {
-          const city = citiesByName[name];
-          return Cesium.Cartesian3.fromDegrees(city.long, city.lat);
-        }),
-        width: 4,
-        material: player.color.withAlpha(0.5),
+        positions,
+        width: 6,
+        material: new Cesium.PolylineOutlineMaterialProperty({
+          color: player.color.withAlpha(0.5),
+          outlineWidth: 3,
+          outlineColor: player.color
+            .brighten(0.7, new Cesium.Color())
+            .withAlpha(0),
+        }) as Cesium.MaterialProperty,
       },
     });
     pathsByPlayerEntity.set(playerEntity, pathEntity);
@@ -167,15 +154,42 @@ handler.setInputAction(
 );
 
 let highlightedPath: Cesium.Entity | undefined;
+let highlightedRemainder: Cesium.Entity | undefined;
 viewer.selectedEntityChanged.addEventListener(entity => {
   if (highlightedPath) {
-    const color = highlightedPath.polyline!.material.color;
-    color.setValue(color.getValue().withAlpha(0.5));
+    const material = highlightedPath.polyline!.material;
+    material.color.setValue(material.color.getValue().withAlpha(0.5));
+    material.outlineColor.setValue(
+      material.outlineColor.getValue().withAlpha(0)
+    );
+  }
+  if (highlightedRemainder) {
+    viewer.entities.remove(highlightedRemainder);
+    highlightedRemainder = undefined;
   }
 
   highlightedPath = pathsByPlayerEntity.get(entity);
   if (!highlightedPath) return;
 
-  const color = highlightedPath.polyline!.material.color;
-  color.setValue(color.getValue().withAlpha(1));
+  const material = highlightedPath.polyline!.material;
+  material.color.setValue(material.color.getValue().withAlpha(1));
+  material.outlineColor.setValue(
+    material.outlineColor.getValue().withAlpha(0.2)
+  );
+
+  const player = playersByEntity.get(entity)!;
+  highlightedRemainder = viewer.entities.add({
+    polyline: {
+      positions: [
+        player.location,
+        Cesium.Cartesian3.fromDegrees(player.city.long, player.city.lat),
+      ],
+      width: 6,
+      material: new Cesium.PolylineOutlineMaterialProperty({
+        color: Cesium.Color.WHITE.withAlpha(0.3),
+        outlineWidth: 3,
+        outlineColor: Cesium.Color.WHITE.withAlpha(0.15),
+      }) as Cesium.MaterialProperty,
+    },
+  });
 });

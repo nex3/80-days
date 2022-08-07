@@ -12,6 +12,7 @@ declare global {
 declare module 'cesium' {
   interface MaterialProperty {
     get color(): Cesium.Property;
+    get outlineColor(): Cesium.Property;
   }
 
   // Everything that Cesium types as a property is actually a
