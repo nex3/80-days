@@ -157,8 +157,7 @@ export const players: Player[] = [
     emoji: '🦭',
     image: '/images/liz.webp',
     color: rgb('00637b'),
-    path: ['London', 'Paris', 'Berlin'],
-    progress: 0.7,
+    path: ['London'],
   }),
   Player.emoji('Natalie', {
     emoji: '🌿',
