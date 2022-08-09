@@ -107,6 +107,11 @@ function rgb(hex: string): Cesium.Color {
 }
 
 export const players: Player[] = [
+  Player.emoji('Brian P', {
+    emoji: ':/',
+    color: rgb('7C8383'),
+    path: ['London'],
+  }),
   Player.emoji('BibliovoreOrc', {
     emoji: '📚',
     color: rgb('33FF33'),
