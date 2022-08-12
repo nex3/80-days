@@ -97,19 +97,40 @@ Steam on Windows) to something different while you're playing the race.
 
 ### Prize
 
-* I (Natalie) will buy the winner a narrative-focused indie game of their
-  choosing.
+* **Grand prize**: I (Natalie) will buy the winner a narrative-focused indie
+  game of their choosing.
+
+* **Second prize**: I'll buy the second person to return to London a
+  narrative-focused indie game of their choosing worth $20 or less from
+  [itch.io](https://itch.io/games/store/tag-narrative).
+
+* **Third prize**: I'll buy the third person to return to London a
+  narrative-focused indie game of their choosing worth $10 or less from
+  [itch.io](https://itch.io/games/store/tag-narrative).
 
 * If my wife or I win, we'll give the prize to the next runner-up.
 
 ## Tips & Tricks
 
-* **Time is ticking:** Time will pass at about one minute per second when you're in town, even if you're looking at the map. It'll pass even faster if you're browsing at the market. If you're feeling pressed for time, quickly check the information you need and then pause the game to make your decisions.
+* **Time is ticking:** Time will pass at about one minute per second when you're
+  in town, even if you're looking at the map. It'll pass even faster if you're
+  browsing at the market. If you're feeling pressed for time, quickly check the
+  information you need and then pause the game to make your decisions.
 
-* **Departure times:** Every mode of travel from one city to the next has a departure time, but you'll need to actually click on the Embark button to see them. Don't worry, there's a separate confirmation before you actually leave!
+* **Departure times:** Every mode of travel from one city to the next has a
+  departure time, but you'll need to actually click on the Embark button to see
+  them. Don't worry, there's a separate confirmation before you actually leave!
 
-* **Get some cash**: Money is one of the fundamental resources, and the £4,000 you start with won't last you your journey. You can buy and sell items in the market, often for very substantial profits. Once you've got around £10,000, though, you can probably avoid going out of your way to earn more.
+* **Get some cash**: Money is one of the fundamental resources, and the £4,000
+  you start with won't last you your journey. You can buy and sell items in the
+  market, often for very substantial profits. Once you've got around £10,000,
+  though, you can probably avoid going out of your way to earn more. Try to
+  avoid relying on banks in the cities you visit, since they'll take multiple
+  days to provide you cash.
 
-* **Pack lightly**: Extra suitcases aren't very expensive, but you can only carry so many with you on different modes of transportation. That said, you can often spend a few extra pounds to buy some extra luggage room.
+* **Pack lightly**: Extra suitcases aren't very expensive, but you can only
+  carry so many with you on different modes of transportation. That said, you
+  can often spend a few extra pounds to buy some extra luggage room.
 
-* **Many ways forward**: Don't feel obligated to head due east all the time. The game has ways of making up lost time if you go exploring.
+* **Many ways forward**: Don't feel obligated to head due east all the time. The
+  game has ways of making up lost time if you go exploring.
