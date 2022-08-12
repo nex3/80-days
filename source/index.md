@@ -60,15 +60,13 @@ Steam on Windows) to something different while you're playing the race.
 
 ### Timing
 
-* Don't play through more than one in-game day per real-time day. It's not
-  always possible to stop exactly after midnight in-game, but stop as soon as it
-  autosaves on the next say. (You can see the last autosave on the pause menu.)
+* Don't play through more than one in-game day per real-time day. The game
+  usually autosaves at 10pm nightly, so that's a good default time for sending
+  your daily update.
 
-  * At least on mobile, when you're traveling between cities the game only
-    autosaves when an event occurs. If you end up in a situation where more than
-    one day passes without an autosave, just play until you hit a save point,
-    let me know in your email, and wait to progress until the real-time day
-    catches up with your game.
+  * If it doesn't, just play until you hit a save point. If it somehow ends up
+    going more than one in-game day without saving, let me know in your email,
+    and wait to progress until the real-time day catches up with your game.
 
 * I must receive your update email during the appropriate day, according to
   whatever time zone you're playing in.
