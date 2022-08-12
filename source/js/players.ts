@@ -107,6 +107,11 @@ function rgb(hex: string): Cesium.Color {
 }
 
 export const players: Player[] = [
+  Player.emoji('ferns', {
+    emoji: '🦊️',
+    color: rgb('2C9510'),
+    path: ['London'],
+  }),
   Player.emoji('two', {
     emoji: '2️⃣',
     color: rgb('139DFE'),
