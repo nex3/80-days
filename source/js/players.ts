@@ -108,17 +108,17 @@ function rgb(hex: string): Cesium.Color {
 
 export const players: Player[] = [
   Player.emoji('@topghost', {
-    emoji: '👻',
+    emoji: '🙈',
     color: rgb('966bb6'),
     path: ['London'],
   }),
   Player.emoji('Dana Callista Lexa', {
-    emoji: '💖',
-    color: rgb('FF90DD'),
+    emoji: '☕',
+    color: rgb('8E562E'),
     path: ['London'],
   }),
   Player.emoji('Rushfoil', {
-    emoji: '🌿',
+    emoji: '🐇',
     color: rgb('7e8c8f'),
     path: ['London'],
   }),
