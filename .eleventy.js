@@ -8,7 +8,7 @@ module.exports = function (config) {
     config.addPassthroughCopy({ "node_modules/cesium/Build/Cesium": "/Cesium" });
     config.addPassthroughCopy({ "node_modules/openmoji/color/svg": "/images/openmoji" });
 
-    config.addPlugin(cacheBuster({}));
+    if (process.env.NODE_ENV !== "dev") config.addPlugin(cacheBuster({}));
 
     return {
         templateFormats: ["md", "html", "js", "css"],
