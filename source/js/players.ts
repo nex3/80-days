@@ -107,6 +107,12 @@ function rgb(hex: string): Cesium.Color {
 }
 
 export const players: Player[] = [
+  Player.emoji('swiftie', {
+    // UTC-7
+    emoji: '🧣️',
+    color: rgb('9300FF'),
+    path: ['London'],
+  }),
   Player.emoji('Coraphii', {
     emoji: '🐻‍❄️',
     color: rgb('00dda4'),
@@ -153,9 +159,11 @@ export const players: Player[] = [
     path: ['London'],
   }),
   Player.emoji('two', {
+    // UTC+10
     emoji: '2️⃣',
     color: rgb('139DFE'),
-    path: ['London'],
+    progress: 0.4,
+    path: ['London', 'Paris'],
   }),
   Player.emoji('Brian P', {
     emoji: ':/',
@@ -180,9 +188,11 @@ export const players: Player[] = [
     path: ['London'],
   }),
   Player.emoji('Mallumet', {
+    // UTC-5
     emoji: '🤖',
     color: rgb('44ad9c'),
-    path: ['London'],
+    progress: 0.35,
+    path: ['London', 'Paris'],
   }),
   Player.emoji('Tekgo', {emoji: '💖', color: rgb('e60283'), path: ['London']}),
   Player.emoji('fellatiomatic', {
@@ -200,7 +210,12 @@ export const players: Player[] = [
     color: rgb('e23b59'),
     path: ['London'],
   }),
-  Player.emoji('Athene', {emoji: '😼', color: rgb('fa46f4'), path: ['London']}),
+  Player.emoji('Athene', {
+    // UTC+1
+    emoji: '😼',
+    color: rgb('fa46f4'),
+    path: ['London', 'Paris'],
+  }),
   Player.emoji('Ronja', {emoji: '🐢', color: rgb('009d9d'), path: ['London']}),
   Player.emoji('wayward', {
     emoji: '🎻',

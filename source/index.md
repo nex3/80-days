@@ -13,7 +13,7 @@ real-world days!
 
 [80 Days]: https://www.inklestudios.com/80days/
 
-<p class="begins">The race begins <span class="date">Saturday 13 August</span>!</p>
+<p class="begins">Day <span class="date">1</span></p>
 
 <div id="cesiumContainer"></div>
 
