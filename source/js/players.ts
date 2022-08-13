@@ -247,5 +247,6 @@ export const players: Player[] = [
 
 export const playersByCity: Record<string, Player[]> = {};
 for (const player of players) {
+  if (player.progress) continue;
   (playersByCity[player.city.name] ??= []).push(player);
 }
