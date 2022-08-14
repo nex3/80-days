@@ -168,10 +168,9 @@ export const players: Player[] = [
     path: ['London', 'Paris'],
   }),
   Player.emoji('two', {
-    // UTC+10
+    // UTC+10, Day 3
     emoji: '2️⃣',
     color: rgb('139DFE'),
-    progress: 0.4,
     path: ['London', 'Paris'],
   }),
   Player.emoji('Brian P', {
@@ -274,9 +273,11 @@ export const players: Player[] = [
     path: ['London'],
   }),
   Player.emoji('Natalie', {
+    // UTC-8
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    path: ['London'],
+    progress: 0.24,
+    path: ['London', 'Paris'],
   }),
   Player.emoji('RAT', {
     // UTC-5
