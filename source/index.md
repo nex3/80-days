@@ -17,32 +17,23 @@ real-world days!
 
 <div id="cesiumContainer"></div>
 
-## How to Participate
+## How to Run the Race
 
-The race is open access to anyone who wants to join. To sign up, send an email
-to [race@80-days-in-80-days.com] with the following information:
+Every day, you should play through about one day of in-game time and then send a
+screenshot of your game state to [race@80-days-in-80-days.com]. This screenshot
+should include **your position on the world map and all the information on your
+HUD**.
 
 [race@80-days-in-80-days.com]: mailto:race@80-days-in-80-days.com
 
-* The name you want us to use to refer to you in the standings.
-* The time zone you want to play in.
-* Your favorite color ([hex code preferred]).
-* An emoji to represent you, or some other small icon that won't get me sued for
-  copyright violation.
+The game should autosave at 10pm every day, so just after 10pm on the current
+day will often be the best time to take a screenshot and quit out. However, I'll
+allow any screenshot from between 10pm on the current day and 10pm on the next
+day.
 
-[hex code preferred]: https://htmlcolorcodes.com/color-picker/
-
-Once every real-time day, you may play the game until the in-game day ticks
-over. Once it does, take a screenshot of your progress, then immediately save
-and quit. Send the screenshot to the email above; this screenshot should include
-all the information in the HUD as well as your location on the world map.
-
-The race will use Seed 1, the seed you get if you start a totally new save game.
-If you're playing on a desktop computer, you can fake a new game by renaming your
-save directory (`%UserProfile%\AppData\LocalLow\Inkle Studios` if you're using
-Steam on Windows) to something different while you're playing the race.
-
-**Note:** The game cycles through seven different seeds, but the Seed 1 you get after completing/restarting 7 times _is not the same_ as the Seed 1 you get from a fresh save. So make sure you've got a totally fresh save when you start the race!
+If the game doesn't save at all for more than one in-game day, let me know in
+your email and wait to progress further until the real-time day catches up with
+your game.
 
 ## Rules
 
@@ -59,14 +50,6 @@ Steam on Windows) to something different while you're playing the race.
   well, we'll figure something out on the fly.
 
 ### Timing
-
-* Don't play through more than one in-game day per real-time day. The game
-  usually autosaves at 10pm nightly, so that's a good default time for sending
-  your daily update.
-
-  * If it doesn't, just play until you hit a save point. If it somehow ends up
-    going more than one in-game day without saving, let me know in your email,
-    and wait to progress until the real-time day catches up with your game.
 
 * I must receive your update email during the appropriate day, according to
   whatever time zone you're playing in.
