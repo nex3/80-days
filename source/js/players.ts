@@ -111,17 +111,22 @@ export const players: Player[] = [
     // UTC-7
     emoji: '🧣️',
     color: rgb('9300FF'),
-    path: ['London'],
+    progress: 0.9,
+    path: ['London', 'Paris'],
   }),
   Player.emoji('Coraphii', {
+    // UTC-5
     emoji: '🐻‍❄️',
     color: rgb('00dda4'),
-    path: ['London'],
+    progress: 0.275,
+    path: ['London', 'Paris'],
   }),
   Player.emoji('HeartbreakDaisy', {
+    // K V, UTC-8
     emoji: '🌼',
     color: rgb('FFD139'),
-    path: ['London'],
+    progress: 0.53,
+    path: ['London', 'Paris'],
   }),
   Player.emoji('@topghost', {
     // UTC-8
@@ -151,9 +156,11 @@ export const players: Player[] = [
     path: ['London', 'Paris'],
   }),
   Player.emoji('Modulusshift', {
+    // UTC-6
     emoji: '~',
     color: rgb('96f9f9'),
-    path: ['London'],
+    progress: 0.1,
+    path: ['London', 'Paris'],
   }),
   Player.emoji('Michelle S', {
     emoji: '🍩️',
@@ -188,9 +195,10 @@ export const players: Player[] = [
   }),
   Player.emoji('Tomato', {emoji: '🍅', color: rgb('f1948a'), path: ['London']}),
   Player.emoji('Gwentacles', {
+    // UTC-8, Day 1
     emoji: '🐙️',
     color: rgb('32fff4'),
-    path: ['London'],
+    path: ['London', 'Paris'],
   }),
   Player.emoji('Les', {
     // UTC+0
@@ -225,9 +233,9 @@ export const players: Player[] = [
     path: ['London', 'Paris'],
   }),
   Player.emoji('jebwrench', {
+    // UTC-4
     emoji: '🐧',
     color: rgb('ff5cd6'),
-    progress: 0.5,
     path: ['London', 'Paris'],
   }),
   Player.emoji('WulfOrc', {
@@ -270,23 +278,24 @@ export const players: Player[] = [
     image: '/images/liz.webp',
     color: rgb('00637b'),
     progress: 0.28,
-    path: ['London'],
+    path: ['London', 'Paris'],
   }),
   Player.emoji('Natalie', {
-    // UTC-8
+    // UTC-8, day 2
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    progress: 0.24,
-    path: ['London', 'Paris'],
+    path: ['Paris'],
   }),
   Player.emoji('RAT', {
     // UTC-5
     emoji: '🐀',
     color: rgb('70ff61'),
-    progress: 0.25,
-    path: ['London', 'Paris'],
+    path: ['London', 'Paris', 'Amsterdam'],
   }),
-  Player.emoji('wing', {emoji: '🥑', color: rgb('008080'), path: ['London']}),
+  Player.emoji('wing', {
+    // UTC-8
+    emoji: '🥑', color: rgb('008080'), progress: 0.51,
+    path: ['London', 'Paris']}),
   Player.emoji('bcj', {
     // UTC-5
     emoji: '👻',
