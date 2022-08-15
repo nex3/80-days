@@ -267,11 +267,10 @@ export const players: Player[] = [
     path: ['London', 'Paris'],
   }),
   await Player.image('Liz', {
-    // UTC-7
+    // UTC-7, Day 2
     emoji: '🦭',
     image: '/images/liz.webp',
     color: rgb('00637b'),
-    progress: 0.28,
     path: ['London', 'Paris'],
   }),
   Player.emoji('Natalie', {
