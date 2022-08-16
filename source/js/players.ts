@@ -281,7 +281,7 @@ export const players: Player[] = [
     // UTC-7, Day 4
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    path: ['Paris', 'Nice', 'Rome'],
+    path: ['London', 'Paris', 'Nice', 'Rome'],
   }),
   Player.emoji('RAT', {
     // UTC-5, Day 3
