@@ -72,7 +72,7 @@ for (const city of cities) {
 const pathsByPlayerEntity = new Map<Cesium.Entity, Cesium.Entity>();
 const playersByEntity = new Map<Cesium.Entity, Player>();
 for (const player of players) {
-  const count = playersByCity[player.city.name!].length;
+  const count = playersByCity[player.city.name!]?.length ?? 0;
   const r = player.progress || count === 1 ? 0 : Math.random() * (10 + count);
   const theta = Math.random() * 2 * Math.PI;
   const playerEntity = viewer.entities.add({
