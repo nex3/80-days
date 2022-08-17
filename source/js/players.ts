@@ -108,10 +108,11 @@ function rgb(hex: string): Cesium.Color {
 
 export const players: Player[] = [
   Player.emoji('swiftie', {
-    // not telling, UTC-7, Day 3
+    // not telling, UTC-7, Day 4
     emoji: '🧣️',
     color: rgb('9300FF'),
-    path: ['London', 'Paris', 'Munich', 'Berlin'],
+    progress: 0.6,
+    path: ['London', 'Paris', 'Munich', 'Berlin', 'Vienna'],
   }),
   Player.emoji('Coraphii', {
     // UTC-5, Day 4
@@ -121,10 +122,11 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Copenhagen'],
   }),
   Player.emoji('HeartbreakDaisy', {
-    // K V, UTC-7, Day 3
+    // K V, UTC-7, Day 4
     emoji: '🌼',
     color: rgb('FFD139'),
-    path: ['London', 'Paris', 'Amsterdam'],
+    progress: 0.55,
+    path: ['London', 'Paris', 'Amsterdam', 'Berlin'],
   }),
   Player.emoji('@topghost', {
     // Casey, UTC-7, Day 4
