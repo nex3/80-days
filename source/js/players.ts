@@ -107,6 +107,12 @@ function rgb(hex: string): Cesium.Color {
 }
 
 export const players: Player[] = [
+  Player.emoji('Lade Ada Locke & Jeanne Watson', {
+    // kouhai, UTC-7, Day 4
+    emoji: '✨',
+    color: rgb('00002e'),
+    path: ['London', 'Paris', 'Nice'],
+  }),
   Player.emoji('swiftie', {
     // not telling, UTC-7, Day 4
     emoji: '🧣️',
@@ -144,7 +150,6 @@ export const players: Player[] = [
     // UTC+1, Day 4
     emoji: '🐇',
     color: rgb('7e8c8f'),
-    progress: 0.55,
     path: ['London', 'Paris', 'Amsterdam', 'Berlin'],
   }),
   Player.emoji('Ari-topper', {
@@ -160,10 +165,10 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Munich', 'Vienna'],
   }),
   Player.emoji('Michelle S', {
-    // UTC-7, Day 3
+    // UTC-7, Day 4
     emoji: '🍩️',
     color: rgb('A51DE5'),
-    path: ['London', 'Paris', 'Munich'],
+    path: ['London', 'Paris', 'Munich', 'Berlin'],
   }),
   Player.emoji('ferns', {
     // UTC-7, Day 4
@@ -235,7 +240,7 @@ export const players: Player[] = [
     path: ['London', 'Paris'],
   }),
   Player.emoji('jebwrench', {
-    // UTC-4, Day 4
+    // UTC-4, Day 5
     emoji: '🐧',
     color: rgb('ff5cd6'),
     path: ['London', 'Paris', 'Munich', 'Vienna'],
@@ -248,11 +253,10 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Copenhagen'],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 4
+    // UTC+1, Day 5
     emoji: '😼',
     color: rgb('fa46f4'),
-    progress: 0.05,
-    path: ['London', 'Paris', 'Munich', 'Vienna', 'Venice'],
+    path: ['London', 'Paris', 'Munich', 'Vienna', 'Venice', 'Rome'],
   }),
   Player.emoji('Ronja', {
     // UTC-4, Day 2
@@ -286,23 +290,22 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Nice'],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 4
+    // UTC-7, Day 5
     emoji: '🌿',
     color: Cesium.Color.BLUE,
     path: ['London', 'Paris', 'Nice', 'Rome'],
   }),
   Player.emoji('RAT', {
-    // piper, UTC-5, Day 4
+    // piper, UTC-5, Day 5
     emoji: '🐀',
     color: rgb('70ff61'),
-    progress: 0.45,
     path: ['London', 'Paris', 'Amsterdam', 'Berlin'],
   }),
   Player.emoji('wing', {
-    // UTC-7, Day 3
+    // UTC-7, Day 4
     emoji: '🥑',
     color: rgb('008080'),
-    path: ['London', 'Paris'],
+    path: ['London', 'Paris', 'Amsterdam', 'Berlin'],
   }),
   Player.emoji('bcj', {
     // UTC-5, Day 4

@@ -167,7 +167,7 @@ export type CityName =
   | 'Yadanabon'
   | 'Yokohama'
   | 'Zurich';
- 
+
 export interface City {
   name: CityName;
   lat: number;
