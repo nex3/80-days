@@ -1,12 +1,12 @@
 import * as Cesium from 'cesium';
 
-import {City, citiesByName} from './cities';
+import {City, CityName, citiesByName} from './cities';
 
 const pinBuilder = new Cesium.PinBuilder();
 
 interface PlayerOptions {
   color: Cesium.Color;
-  path: string[];
+  path: CityName[];
   emoji?: string;
   progress?: number;
 }
@@ -15,7 +15,7 @@ export class Player {
   readonly name: string;
   readonly pin: HTMLCanvasElement;
   readonly color: Cesium.Color;
-  readonly path: string[];
+  readonly path: CityName[];
   readonly progress?: number;
 
   private constructor(
