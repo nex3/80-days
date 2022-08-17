@@ -72,7 +72,7 @@ for (const city of cities) {
 const pathsByPlayerEntity = new Map<Cesium.Entity, Cesium.Entity>();
 const playersByEntity = new Map<Cesium.Entity, Player>();
 for (const player of players) {
-  const count = playersByCity[player.city.name!].length;
+  const count = playersByCity[player.city.name!]?.length ?? 0;
   const r = player.progress || count === 1 ? 0 : Math.random() * (10 + count);
   const theta = Math.random() * 2 * Math.PI;
   const playerEntity = viewer.entities.add({
@@ -153,22 +153,33 @@ handler.setInputAction(
   Cesium.ScreenSpaceEventType.MOUSE_MOVE
 );
 
-let highlightedPath: Cesium.Entity | undefined;
 let highlightedRemainder: Cesium.Entity | undefined;
 viewer.selectedEntityChanged.addEventListener(entity => {
+  const highlightedPath = pathsByPlayerEntity.get(entity);
   if (highlightedPath) {
-    const material = highlightedPath.polyline!.material;
-    material.color.setValue(material.color.getValue().withAlpha(0.5));
-    material.outlineColor.setValue(
-      material.outlineColor.getValue().withAlpha(0)
-    );
+    for (const path of pathsByPlayerEntity.values()) {
+      if (path === highlightedPath) continue;
+      const material = path.polyline!.material;
+      material.color.setValue(material.color.getValue().withAlpha(0));
+      material.outlineColor.setValue(
+        material.outlineColor.getValue().withAlpha(0)
+      );
+    }
+  } else {
+    for (const path of pathsByPlayerEntity.values()) {
+      const material = path.polyline!.material;
+      material.color.setValue(material.color.getValue().withAlpha(0.5));
+      material.outlineColor.setValue(
+        material.outlineColor.getValue().withAlpha(0)
+      );
+    }
   }
+
   if (highlightedRemainder) {
     viewer.entities.remove(highlightedRemainder);
     highlightedRemainder = undefined;
   }
 
-  highlightedPath = pathsByPlayerEntity.get(entity);
   if (!highlightedPath) return;
 
   const material = highlightedPath.polyline!.material;
