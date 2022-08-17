@@ -141,10 +141,11 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam'],
   }),
   Player.emoji('Dana Callista Lexa', {
-    // UTC-5, Day 4
+    // UTC-5, Day 5
     emoji: '☕',
     color: rgb('8E562E'),
-    path: ['London', 'Paris', 'Amsterdam'],
+      progress: 0.45,
+    path: ['London', 'Paris', 'Amsterdam', 'Berlin'],
   }),
   Player.emoji('Rushfoil', {
     // UTC+1, Day 4
@@ -153,10 +154,11 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Berlin'],
   }),
   Player.emoji('Ari-topper', {
-    // Delphine, UTC+2, Day 3
+    // Delphine, UTC+2, Day 5
     emoji: '🌻',
     color: rgb('8773d3'),
-    path: ['London', 'Paris', 'Munich', 'Vienna', 'Budapest'],
+    progress: 0.7,
+    path: ['London', 'Paris', 'Munich', 'Vienna', 'Budapest', 'Thessaloniki'],
   }),
   Player.emoji('Modulusshift', {
     // UTC-6, Day 4, used 1 grace
@@ -165,16 +167,16 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Munich', 'Vienna'],
   }),
   Player.emoji('Michelle S', {
-    // UTC-7, Day 4
+    // UTC-7, Day 5
     emoji: '🍩️',
     color: rgb('A51DE5'),
     path: ['London', 'Paris', 'Munich', 'Berlin'],
   }),
   Player.emoji('ferns', {
-    // UTC-7, Day 4
+    // UTC-7, Day 5
     emoji: '🦊️',
     color: rgb('2C9510'),
-    progress: 0.35,
+    progress: 0.65,
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('two', {
@@ -185,14 +187,13 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('Brian P', {
-    // UTC-4, Day 4
+    // UTC-4, Day 5
     emoji: ':/',
     color: rgb('7C8383'),
-    progress: 0.65,
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('BibliovoreOrc', {
-    // UTC-5, Day 4
+    // Rob, UTC-5, Day 5
     emoji: '📚',
     color: rgb('33FF33'),
     progress: 0.5,
@@ -200,13 +201,13 @@ export const players: Player[] = [
   }),
   Player.emoji('Tomato', {emoji: '🍅', color: rgb('f1948a'), path: ['London']}),
   Player.emoji('Gwentacles', {
-    // UTC-7, Day 3, used 1 grace
+    // UTC-7, Day 5, used 2 graces
     emoji: '🐙️',
     color: rgb('32fff4'),
     path: ['London', 'Paris', 'Amsterdam'],
   }),
   Player.emoji('Les', {
-    // daanniii, UTC+0, Day 4
+    // daanniii, UTC+0, Day 5
     emoji: '🐸️',
     color: rgb('b00b69'),
     path: ['London', 'Paris', 'Amsterdam', 'Berlin'],
@@ -229,7 +230,6 @@ export const players: Player[] = [
     // UTC-7, Day 4
     emoji: '💖',
     color: rgb('e60283'),
-    progress: 0.45,
     path: ['London', 'Paris', 'Amsterdam', 'Kristiania'],
   }),
   Player.emoji('fellatiomatic', {
@@ -265,10 +265,10 @@ export const players: Player[] = [
     path: ['London', 'Paris'],
   }),
   Player.emoji('wayward', {
-    // UTC-7, Day 4
+    // UTC-7, Day 5
     emoji: '🎻',
     color: rgb('9a86a3'),
-    path: ['London', 'Paris', 'Munich', 'Vienna'],
+    path: ['London', 'Paris', 'Munich', 'Vienna', 'Venice'],
   }),
   await Player.image('jae', {
     // UTC-5, Day 3
@@ -277,17 +277,17 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam'],
   }),
   Player.emoji('@garak', {
-    // UTC-5, Day 4
+    // UTC-5, Day 5
     emoji: 'ꙮ',
     color: rgb('6bec58'),
-    path: ['London', 'Paris', 'Munich'],
+    path: ['London', 'Paris', 'Munich', 'Vienna', 'Warsaw'],
   }),
   await Player.image('Liz', {
-    // UTC-7, Day 4
+    // UTC-7, Day 5
     emoji: '🦭',
     image: '/images/liz.webp',
     color: rgb('00637b'),
-    path: ['London', 'Paris', 'Nice'],
+    path: ['London', 'Paris', 'Nice', 'Venice'],
   }),
   Player.emoji('Natalie', {
     // UTC-7, Day 5
@@ -308,16 +308,15 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Berlin'],
   }),
   Player.emoji('bcj', {
-    // UTC-5, Day 4
+    // UTC-5, Day 5
     emoji: '👻',
     color: rgb('6600aa'),
     path: ['London', 'Paris', 'Munich', 'Vienna', 'Budapest'],
   }),
   Player.emoji('Zandra', {
-    // UTC-5, Day 4
+    // UTC-5, Day 5
     emoji: '🐭',
     color: rgb('33ccff'),
-    progress: 0.4,
     path: ['London', 'Paris', 'Nice', 'Rome'],
   }),
 ];
