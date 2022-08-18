@@ -250,10 +250,11 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Copenhagen'],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 5
+    // UTC+1, Day 6
     emoji: '😼',
     color: rgb('fa46f4'),
-    path: ['London', 'Paris', 'Munich', 'Vienna', 'Venice', 'Rome'],
+    progress: 0.6,
+    path: ['London', 'Paris', 'Munich', 'Vienna', 'Venice', 'Rome', 'Athens'],
   }),
   Player.emoji('Ronja', {
     // UTC-4, Day 2
