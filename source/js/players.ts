@@ -157,8 +157,8 @@ export const players: Player[] = [
     // Delphine, UTC+2, Day 5
     emoji: '🌻',
     color: rgb('8773d3'),
-    progress: 0.7,
-    path: ['London', 'Paris', 'Munich', 'Vienna', 'Budapest', 'Thessaloniki'],
+    progress: 0.5,
+    path: ['London', 'Paris', 'Munich', 'Vienna', 'Budapest', 'Belgrade', 'Thessaloniki'],
   }),
   Player.emoji('Modulusshift', {
     // UTC-6, Day 5, used 1 grace
@@ -209,7 +209,7 @@ export const players: Player[] = [
     // daanniii, UTC+0, Day 5
     emoji: '🐸️',
     color: rgb('b00b69'),
-    path: ['London', 'Paris', 'Amsterdam', 'Berlin'],
+    path: ['London', 'Paris', 'Amsterdam', 'Berlin', 'Stockholm'],
   }),
   Player.emoji('Rain Doggerel', {
     // UTC-7, used 1 grace
