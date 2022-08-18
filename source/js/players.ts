@@ -118,7 +118,16 @@ export const players: Player[] = [
     emoji: '🧣️',
     color: rgb('9300FF'),
     progress: 0.1,
-    path: ['London', 'Paris', 'Munich', 'Berlin', 'Prague', 'Vienna', 'Budapest', 'Bucharest'],
+    path: [
+      'London',
+      'Paris',
+      'Munich',
+      'Berlin',
+      'Prague',
+      'Vienna',
+      'Budapest',
+      'Bucharest',
+    ],
   }),
   Player.emoji('Coraphii', {
     // UTC-5, Day 5
@@ -144,7 +153,7 @@ export const players: Player[] = [
     // UTC-5, Day 5
     emoji: '☕',
     color: rgb('8E562E'),
-      progress: 0.45,
+    progress: 0.45,
     path: ['London', 'Paris', 'Amsterdam', 'Berlin'],
   }),
   Player.emoji('Rushfoil', {
@@ -158,7 +167,15 @@ export const players: Player[] = [
     emoji: '🌻',
     color: rgb('8773d3'),
     progress: 0.5,
-    path: ['London', 'Paris', 'Munich', 'Vienna', 'Budapest', 'Belgrade', 'Thessaloniki'],
+    path: [
+      'London',
+      'Paris',
+      'Munich',
+      'Vienna',
+      'Budapest',
+      'Belgrade',
+      'Thessaloniki',
+    ],
   }),
   Player.emoji('Modulusshift', {
     // UTC-6, Day 5, used 1 grace

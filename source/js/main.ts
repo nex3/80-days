@@ -5,8 +5,9 @@ window.CESIUM_BASE_URL = '/Cesium';
 import * as Cesium from 'cesium';
 import {upperCase} from 'upper-case';
 
-import {City, cities, citiesByName} from './cities';
+import {City, CityName, cities, citiesByName} from './cities';
 import {Player, playersByCity, players} from './players';
+import Entity from 'cesium/Source/DataSources/Entity';
 
 Cesium.Ion.defaultAccessToken =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3YTQzNWEwNi01YzM0LTRmZjItYjZmMy1jOTExNTllNTY4MzYiLCJpZCI6MTAzNDI4LCJpYXQiOjE2NTk0OTU4OTN9.-GZMqtr9hUYcNVSPYgGwK5eFNhr4-QN6p7gWB5hAPpw';
@@ -20,14 +21,16 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 });
 viewer.scene.screenSpaceCameraController.minimumZoomDistance = 3e5;
 
+const viewCity = citiesByName['Vienna'];
+
 const startingZoom = 8;
 const offset = 15;
 viewer.camera.setView({
   destination: Cesium.Rectangle.fromDegrees(
-    citiesByName['London'].long - startingZoom,
-    citiesByName['London'].lat - startingZoom - offset,
-    citiesByName['London'].long + startingZoom,
-    citiesByName['London'].lat + startingZoom - offset
+    viewCity.long - startingZoom,
+    viewCity.lat - startingZoom - offset,
+    viewCity.long + startingZoom,
+    viewCity.lat + startingZoom - offset
   ),
   orientation: {
     heading: 0,
@@ -36,7 +39,7 @@ viewer.camera.setView({
   },
 });
 
-const entitiesByCity: Record<string, Cesium.Entity> = {};
+const entitiesByCity = {} as Record<CityName, Cesium.Entity>;
 const defaultLabelTranslucency = new Cesium.NearFarScalar(1.5e6, 1, 2.5e6, 0);
 for (const city of cities) {
   entitiesByCity[city.name] = viewer.entities.add({
@@ -125,7 +128,8 @@ function findHoveredCity(
   if (!Cesium.defined(pickedObject)) return [];
   if (!(pickedObject.primitive instanceof Cesium.PointPrimitive)) return [];
 
-  for (const [cityName, entity] of Object.entries(entitiesByCity)) {
+  const entries = Object.entries(entitiesByCity) as [CityName, Entity][];
+  for (const [cityName, entity] of entries) {
     if (pickedObject.id === entity) return [citiesByName[cityName], entity];
   }
   return [];

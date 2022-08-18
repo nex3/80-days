@@ -345,7 +345,7 @@ export const cities: City[] = [
   {name: 'Zurich', lat: 47.3769, long: 8.5417},
 ];
 
-export const citiesByName = {} as Record<string, City>;
+export const citiesByName = {} as Record<CityName, City>;
 for (const city of cities) {
   citiesByName[city.name] = city;
 }
