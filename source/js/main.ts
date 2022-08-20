@@ -21,7 +21,7 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 });
 viewer.scene.screenSpaceCameraController.minimumZoomDistance = 3e5;
 
-const viewCity = citiesByName['Vienna'];
+const viewCity = citiesByName['Bucharest'];
 
 const startingZoom = 8;
 const offset = 15;
