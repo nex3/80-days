@@ -13,6 +13,7 @@ Cesium.Ion.defaultAccessToken =
   'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiI3YTQzNWEwNi01YzM0LTRmZjItYjZmMy1jOTExNTllNTY4MzYiLCJpZCI6MTAzNDI4LCJpYXQiOjE2NTk0OTU4OTN9.-GZMqtr9hUYcNVSPYgGwK5eFNhr4-QN6p7gWB5hAPpw';
 
 const viewer = new Cesium.Viewer('cesiumContainer', {
+  imageryProvider: new Cesium.IonImageryProvider({assetId: 3845}),
   baseLayerPicker: false,
   geocoder: false,
   timeline: false,
@@ -21,7 +22,7 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 });
 viewer.scene.screenSpaceCameraController.minimumZoomDistance = 3e5;
 
-const viewCity = citiesByName['Istanbul'];
+const viewCity = citiesByName['Antalya'];
 
 const startingZoom = 8;
 const offset = 15;
