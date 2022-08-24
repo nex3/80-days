@@ -108,10 +108,19 @@ function rgb(hex: string): Cesium.Color {
 
 export const players: Player[] = [
   Player.emoji('Lade Ada Locke & Jeanne Watson', {
-    // kouhai, UTC-7, Day 9, used 3 grace and down 1 day
+    // kouhai, UTC-7, Day 11, used 3 grace and down 1 day
     emoji: '✨',
     color: rgb('00002e'),
-    path: ['London', 'Paris', 'Nice', 'Venice', 'Rome', 'Athens', 'Izmir'],
+    path: [
+      'London',
+      'Paris',
+      'Nice',
+      'Venice',
+      'Rome',
+      'Athens',
+      'Izmir',
+      'Istanbul',
+    ],
   }),
   Player.emoji('swiftie', {
     // not telling, UTC-7, used 1 grace, day l9
@@ -130,16 +139,24 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Coraphii', {
-    // UTC-5, Day 10, used 2 graces
+    // UTC-5, Day 11, used 2 graces
     emoji: '🐻‍❄️',
     color: rgb('00dda4'),
-    path: ['London', 'Paris', 'Amsterdam', 'Copenhagen', 'Helsinki', 'Minsk'],
+    progress: 0.05,
+    path: [
+      'London',
+      'Paris',
+      'Amsterdam',
+      'Copenhagen',
+      'Helsinki',
+      'Minsk',
+      'Moscow',
+    ],
   }),
   Player.emoji('HeartbreakDaisy', {
-    // K V, UTC-7, Day 10
+    // K V, UTC-7, Day 11
     emoji: '🌼',
     color: rgb('FFD139'),
-    progress: 0.3,
     path: [
       'London',
       'Paris',
@@ -216,7 +233,7 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Modulusshift', {
-    // Eli UTC-6, Day 10, used 1 grace
+    // Eli UTC-6, Day 11, used 1 grace
     emoji: '~',
     color: rgb('96f9f9'),
     path: [
@@ -242,7 +259,7 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('two', {
-    // UTC+10, Day 11
+    // UTC+10, Day 12
     emoji: '2️⃣',
     color: rgb('139DFE'),
     path: [
@@ -351,7 +368,7 @@ export const players: Player[] = [
     path: ['London', 'Paris'],
   }),
   Player.emoji('jebwrench', {
-    // UTC-4, Day 11
+    // UTC-4, Day 12
     emoji: '🐧',
     color: rgb('ff5cd6'),
     path: [
@@ -366,10 +383,11 @@ export const players: Player[] = [
       'Beirut',
       'Alexandria',
       'Cairo',
+      "Ha'il",
     ],
   }),
   Player.emoji('WulfOrc', {
-    // Cliff, UTC-7, Day 10
+    // Cliff, UTC-7, Day 11
     emoji: '🦀',
     color: rgb('e23b59'),
     path: [
@@ -380,10 +398,11 @@ export const players: Player[] = [
       'Stockholm',
       'Warsaw',
       'Minsk',
+      'Odessa',
     ],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 11
+    // UTC+1, Day 12
     emoji: '😼',
     color: rgb('fa46f4'),
     path: [
@@ -450,9 +469,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 11
+    // UTC-7, Day 12
     emoji: '🌿',
     color: Cesium.Color.BLUE,
+    progress: 0.35,
     path: [
       'London',
       'Paris',
@@ -464,13 +484,13 @@ export const players: Player[] = [
       'Luxor',
       'Aswan',
       'Wadi Halfa',
+      'Khartoum',
     ],
   }),
   Player.emoji('RAT', {
-    // piper, UTC-5, Day 10
+    // piper, UTC-5, Day 11
     emoji: '🐀',
     color: rgb('70ff61'),
-    progress: 0.5,
     path: [
       'London',
       'Paris',
