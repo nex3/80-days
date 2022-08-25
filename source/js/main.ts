@@ -22,16 +22,17 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 });
 viewer.scene.screenSpaceCameraController.minimumZoomDistance = 3e5;
 
-const viewCity = citiesByName['Antalya'];
+const viewCity = citiesByName['Mount Elbrus'];
+const viewAdjust = {lat: -2, long: 0};
 
 const startingZoom = 8;
 const offset = 15;
 viewer.camera.setView({
   destination: Cesium.Rectangle.fromDegrees(
-    viewCity.long - startingZoom,
-    viewCity.lat - startingZoom - offset,
-    viewCity.long + startingZoom,
-    viewCity.lat + startingZoom - offset
+    viewCity.long + viewAdjust.long - startingZoom,
+    viewCity.lat + viewAdjust.lat - startingZoom - offset,
+    viewCity.long + viewAdjust.long + startingZoom,
+    viewCity.lat + viewAdjust.lat + startingZoom - offset
   ),
   orientation: {
     heading: 0,
