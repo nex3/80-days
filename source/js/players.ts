@@ -189,7 +189,8 @@ export const players: Player[] = [
   Player.emoji('Dana Callista Lexa', {
     // UTC-5, Day 13
     emoji: '☕',
-    color: rgb('8E562E'), progress: 0.5,
+    color: rgb('8E562E'),
+    progress: 0.5,
     path: [
       'London',
       'Paris',

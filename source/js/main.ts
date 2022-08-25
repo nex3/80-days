@@ -161,8 +161,16 @@ handler.setInputAction(
 
 let highlightedRemainder: Cesium.Entity | undefined;
 viewer.selectedEntityChanged.addEventListener(entity => {
+  // Remove city highlights added for a previous path
+  for (const city of Object.values(entitiesByCity)) {
+    city.point!.color!.setValue(Cesium.Color.RED.withAlpha(0.01));
+    city.point!.pixelSize!.setValue(9);
+    city.point!.outlineWidth!.setValue(2);
+  }
+
   const highlightedPath = pathsByPlayerEntity.get(entity);
   if (highlightedPath) {
+    // Hide all non-selected paths
     for (const path of pathsByPlayerEntity.values()) {
       if (path === highlightedPath) continue;
       const material = path.polyline!.material;
@@ -172,6 +180,7 @@ viewer.selectedEntityChanged.addEventListener(entity => {
       );
     }
   } else {
+    // Nothing is highlighted, so set every path to its default style
     for (const path of pathsByPlayerEntity.values()) {
       const material = path.polyline!.material;
       material.color.setValue(material.color.getValue().withAlpha(0.5));
@@ -188,12 +197,14 @@ viewer.selectedEntityChanged.addEventListener(entity => {
 
   if (!highlightedPath) return;
 
+  // Make the selected player's path more vivid
   const material = highlightedPath.polyline!.material;
   material.color.setValue(material.color.getValue().withAlpha(1));
   material.outlineColor.setValue(
     material.outlineColor.getValue().withAlpha(0.2)
   );
 
+  // Highlight the remaining path for an in-progress player
   const player = playersByEntity.get(entity)!;
   highlightedRemainder = viewer.entities.add({
     polyline: {
@@ -209,4 +220,19 @@ viewer.selectedEntityChanged.addEventListener(entity => {
       }) as Cesium.MaterialProperty,
     },
   });
+
+  // Highlight cities along the path
+  let path = player.path;
+  if (player.progress) {
+    entitiesByCity[path[path.length - 1]].point!.color!.setValue(
+      Cesium.Color.WHITE.withAlpha(0.6)
+    );
+    path = path.slice(0, path.length - 1);
+  }
+  for (const city of path) {
+    const entity = entitiesByCity[city];
+    entity.point!.color!.setValue(player.color);
+    entity.point!.pixelSize!.setValue(10);
+    entity.point!.outlineWidth!.setValue(1);
+  }
 });
