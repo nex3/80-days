@@ -217,6 +217,7 @@ export const players: Player[] = [
       'Munich',
       'Vienna',
       'Budapest',
+      'Belgrade',
       'Thessaloniki',
       'Athens',
       'Izmir',
