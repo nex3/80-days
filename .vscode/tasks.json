@@ -1,0 +1,14 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "fix",
+			"problemMatcher": [
+				"$eslint-compact"
+			],
+			"label": "npm: fix",
+			"detail": "gts fix"
+		}
+	]
+}

@@ -13,7 +13,7 @@ real-world days!
 
 [80 Days]: https://www.inklestudios.com/80days/
 
-<p class="begins">Day <span class="date">17</span></p>
+<p class="begins">Day <span class="date">18</span></p>
 
 <div id="cesiumContainer"></div>
 
