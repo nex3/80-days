@@ -5,6 +5,5 @@ _static
 source/js/*.js
 source/css/*.css
 build
-/package-lock.json
 **.js.map
 **.LICENSE.txt
