@@ -162,9 +162,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('HeartbreakDaisy', {
-    // K V, UTC-7, Day 21
+    // K V, UTC-7, Day 22
     emoji: '🌼',
-    color: rgb('FFD139'),
+    color: rgb('FFD139'), progress: 0.45,
     path: [
       'London',
       'Paris',
@@ -179,12 +179,13 @@ export const players: Player[] = [
       'Baku',
       'Tehran',
       'Herat',
+      'Quetta'
     ],
   }),
   Player.emoji('@topghost', {
-    // Casey, UTC-7, Day 21, down one grace
+    // Casey, UTC-7, Day 22, down one grace
     emoji: '🙈',
-    color: rgb('966bb6'),
+    color: rgb('966bb6'), progress: 0.5,
     path: [
       'London',
       'Paris',
@@ -199,12 +200,13 @@ export const players: Player[] = [
       'Tsaritsyn',
       'Astrakhan',
       'Ekaterinburg',
+      'Omsk'
     ],
   }),
   Player.emoji('Dana Callista Lexa', {
-    // UTC-5, Day 21, used one grace
+    // UTC-5, Day 22, used one grace
     emoji: '☕',
-    color: rgb('8E562E'),
+    color: rgb('8E562E'), progress: 0.5,
     path: [
       'London',
       'Paris',
@@ -223,7 +225,7 @@ export const players: Player[] = [
       'Aswan',
       'Wadi Halfa',
       'Khartoum',
-      'Ujiji',
+      'Ujiji', 'Quelimane'
     ],
   }),
   Player.emoji('Rushfoil', {
@@ -255,7 +257,6 @@ export const players: Player[] = [
     // Delphine, UTC+2, Day 21, used one grace
     emoji: '🌻',
     color: rgb('8773d3'),
-    progress: 0.9,
     path: [
       'London',
       'Paris',
@@ -296,10 +297,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Michelle S', {
-    // UTC-7, Day 21, used 2 grace
+    // UTC-7, Day 22, used 2 grace
     emoji: '🍩️',
     color: rgb('A51DE5'),
-    progress: 0.6,
+    progress: 0.95,
     path: [
       'London',
       'Paris',
@@ -325,7 +326,7 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('two', {
-    // UTC+10, Day 21
+    // UTC+10, Day 22
     emoji: '2️⃣',
     color: rgb('139DFE'),
     path: [
@@ -341,12 +342,13 @@ export const players: Player[] = [
       'Herat',
       'Kabul',
       'Lahore',
+      'Delhi'
     ],
   }),
   Player.emoji('Brian P', {
-    // UTC-4, Day 21
+    // UTC-4, Day 22
     emoji: ':/',
-    color: rgb('7C8383'),
+    color: rgb('7C8383'), progress: 0.2,
     path: [
       'London',
       'Paris',
@@ -359,13 +361,13 @@ export const players: Player[] = [
       'Ekaterinburg',
       'Omsk',
       'Irkutsk',
-      'Urga',
+      'Urga', 'Yokohama'
     ],
   }),
   Player.emoji('BibliovoreOrc', {
-    // Rob, UTC-5, Day 21
+    // Rob, UTC-5, Day 22
     emoji: '📚',
-    color: rgb('33FF33'),
+    color: rgb('33FF33'), progress: 0.4,
     path: [
       'London',
       'Paris',
@@ -380,7 +382,7 @@ export const players: Player[] = [
       'Manama',
       'Karachi',
       'Bombay',
-      'Nova Goa',
+      'Nova Goa', 'Colombo'
     ],
   }),
   Player.emoji('Tomato', {emoji: '🍅', color: rgb('f1948a'), path: ['London']}),
@@ -405,9 +407,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Rain Doggerel', {
-    // UTC-7, Day 21, used 2 grace
+    // UTC-7, Day 22, used 2 grace
     emoji: '☣️',
-    color: rgb('14bccc'),
+    color: rgb('14bccc'), progress: 0.33,
     path: [
       'London',
       'Paris',
@@ -422,7 +424,7 @@ export const players: Player[] = [
       'Beirut',
       'Alexandria',
       'Cairo',
-      'Suez',
+      'Suez', 'Khartoum'
     ],
   }),
   Player.emoji('Mallumet', {
@@ -445,7 +447,7 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Tekgo', {
-    // UTC-7, Day 21
+    // UTC-7, Day 22
     emoji: '💖',
     color: rgb('e60283'),
     path: [
@@ -458,7 +460,7 @@ export const players: Player[] = [
       'Moscow',
       'Ekaterinburg',
       'Astrakhan',
-      'Baku',
+      'Baku', 'Tehran'
     ],
   }),
   Player.emoji('fellatiomatic', {
@@ -490,10 +492,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('WulfOrc', {
-    // Cliff, UTC-7, Day 21, one grace used
+    // Cliff, UTC-7, Day 22, one grace used
     emoji: '🦀',
     color: rgb('e23b59'),
-    progress: 0.55,
     path: [
       'London',
       'Paris',
@@ -556,10 +557,9 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam'],
   }),
   Player.emoji('@garak', {
-    // UTC-5, Day 21
+    // UTC-5, Day 22
     emoji: 'ꙮ',
     color: rgb('6bec58'),
-    progress: 0.4,
     path: [
       'London',
       'Paris',
@@ -576,15 +576,15 @@ export const players: Player[] = [
       'Dvarka',
       'Bombay',
       'Nova Goa',
-      'Colombo',
+      'Colombo', 'Madras'
     ],
   }),
   await Player.image('Liz', {
-    // UTC-7, Day 21
+    // UTC-7, Day 22
     emoji: '🦭',
     image: '/images/liz.webp',
     color: rgb('00637b'),
-    progress: 0.15,
+    progress: 0.45,
     path: [
       'London',
       'Paris',
@@ -627,10 +627,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('RAT', {
-    // piper, UTC-5, Day 21
+    // piper, UTC-5, Day 22
     emoji: '🐀',
     color: rgb('70ff61'),
-    progress: 0.79,
+    progress: 0.45,
     path: [
       'London',
       'Paris',
@@ -643,13 +643,13 @@ export const players: Player[] = [
       'Omsk',
       'Irkutsk',
       'Karimskaya',
-      'Pyongyang',
+      'Pyongyang', 'Manila'
     ],
   }),
   Player.emoji('wing', {
-    // UTC-7, Day 21, used 1 grace
+    // UTC-7, Day 22, used 1 grace
     emoji: '🥑',
-    color: rgb('008080'),
+    color: rgb('008080'), progress: 0.5,
     path: [
       'London',
       'Paris',
@@ -664,10 +664,11 @@ export const players: Player[] = [
       'Ekaterinburg',
       'Omsk',
       'Irkutsk',
+      'Karimskaya',
     ],
   }),
   Player.emoji('bcj', {
-    // UTC-5, Day 21
+    // UTC-5, Day 22
     emoji: '👻',
     color: rgb('6600aa'),
     path: [
@@ -689,10 +690,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Zandra', {
-    // UTC-5, Day 21
+    // UTC-5, Day 22
     emoji: '🐭',
     color: rgb('33ccff'),
-    progress: 0.55,
+    progress: 0.8,
     path: [
       'London',
       'Paris',
