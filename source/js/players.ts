@@ -331,9 +331,9 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('two', {
-    // UTC+10, Day 22
+    // UTC+10, Day 23
     emoji: '2️⃣',
-    color: rgb('139DFE'),
+    color: rgb('139DFE'), progress: 0.15,
     path: [
       'London',
       'Paris',
@@ -347,7 +347,7 @@ export const players: Player[] = [
       'Herat',
       'Kabul',
       'Lahore',
-      'Delhi',
+      'Delhi', 'Hong Kong'
     ],
   }),
   Player.emoji('Brian P', {
