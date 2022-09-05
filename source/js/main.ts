@@ -22,11 +22,12 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 });
 viewer.scene.screenSpaceCameraController.minimumZoomDistance = 3e5;
 
-const viewCity = citiesByName['Beijing'];
-const viewAdjust = {lat: -1, long: 0};
+const viewCity = citiesByName['Yadanabon'];
+const viewAdjust = {lat: -5, long: 4, zoom: 5, offset: -3, pitch: -10};
 
-const startingZoom = 8;
-const offset = 15;
+const startingZoom = 8 + viewAdjust.zoom;
+const offset = 15 + viewAdjust.offset;
+const pitch = -60 + viewAdjust.pitch;
 viewer.camera.setView({
   destination: Cesium.Rectangle.fromDegrees(
     viewCity.long + viewAdjust.long - startingZoom,
@@ -36,7 +37,7 @@ viewer.camera.setView({
   ),
   orientation: {
     heading: 0,
-    pitch: Cesium.Math.toRadians(-60), // default value (looking down)
+    pitch: Cesium.Math.toRadians(pitch),
     roll: 0.0, // default value
   },
 });
