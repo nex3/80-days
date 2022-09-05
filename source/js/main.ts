@@ -23,7 +23,7 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 viewer.scene.screenSpaceCameraController.minimumZoomDistance = 3e5;
 
 const viewCity = citiesByName['Yadanabon'];
-const viewAdjust = {lat: -5, long: 4, zoom: 5, offset: -3, pitch: -10};
+const viewAdjust = {lat: 0, long: 7, zoom: 5, offset: -3, pitch: -10};
 
 const startingZoom = 8 + viewAdjust.zoom;
 const offset = 15 + viewAdjust.offset;
