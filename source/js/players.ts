@@ -343,7 +343,7 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('two', {
-    // UTC+10, Day 25
+    // UTC+10, Day 26
     emoji: '2️⃣',
     color: rgb('139DFE'),
     path: [
@@ -501,10 +501,9 @@ export const players: Player[] = [
     path: ['London', 'Paris'],
   }),
   Player.emoji('jebwrench', {
-    // UTC-4, Day 25
+    // UTC-4, Day 26
     emoji: '🐧',
     color: rgb('ff5cd6'),
-    progress: 0.6,
     path: [
       'London',
       'Paris',
@@ -526,9 +525,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('WulfOrc', {
-    // Cliff, UTC-7, Day 24, one grace used
+    // Cliff, UTC-7, Day 25, one grace used
     emoji: '🦀',
-    color: rgb('e23b59'),
+    color: rgb('e23b59'), progress: 0.5,
     path: [
       'London',
       'Paris',
@@ -540,14 +539,13 @@ export const players: Player[] = [
       'Odessa',
       'Moscow',
       'Ekaterinburg',
-      'Omsk',
+      'Omsk', 'Irkutsk'
     ],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 25
+    // UTC+1, Day 26
     emoji: '😼',
     color: rgb('fa46f4'),
-    progress: 0.9,
     path: [
       'London',
       'Paris',
@@ -561,7 +559,7 @@ export const players: Player[] = [
       "Ha'il",
       'Riyadh',
       'Muscat',
-      'Dvarka',
+      'Bombay',
     ],
   }),
   Player.emoji('Ronja', {
@@ -642,10 +640,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 25
+    // UTC-7, Day 26
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    progress: 0.7,
+    progress: 0.85,
     path: [
       'London',
       'Paris',
@@ -666,10 +664,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('RAT', {
-    // piper, UTC-5, Day 24
+    // piper, UTC-5, Day 25
     emoji: '🐀',
     color: rgb('70ff61'),
-    progress: 0.1,
+    progress: 0.4,
     path: [
       'London',
       'Paris',
@@ -688,10 +686,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('wing', {
-    // UTC-7, Day 25, used 1 grace
+    // UTC-7, Day 26, used 1 grace
     emoji: '🥑',
     color: rgb('008080'),
-    progress: 0.5,
     path: [
       'London',
       'Paris',
