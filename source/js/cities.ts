@@ -344,7 +344,7 @@ export const cities: City[] = [
   {name: 'Yadanabon', lat: 21.9588, long: 96.0891},
   {name: 'Yokohama', lat: 35.4437, long: 139.638},
   {name: 'Zurich', lat: 47.3769, long: 8.5417},
-  {name: '???', lat: -7.2088, long: 80},
+  {name: '???', lat: -7.2088, long: 85},
 ];
 
 export const citiesByName = {} as Record<CityName, City>;
