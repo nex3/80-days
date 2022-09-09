@@ -679,7 +679,7 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('RAT', {
-    // piper, UTC-5, Day 27
+    // piper, UTC-7, Day 27
     emoji: '🐀',
     color: rgb('70ff61'),
     path: [
