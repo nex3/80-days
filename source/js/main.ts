@@ -22,8 +22,8 @@ const viewer = new Cesium.Viewer('cesiumContainer', {
 });
 viewer.scene.screenSpaceCameraController.minimumZoomDistance = 3e5;
 
-const viewCity = citiesByName['Pyongyang'];
-const viewAdjust = {lat: -20, long: 0, zoom: 15, offset: -10, pitch: -18};
+const viewCity = citiesByName['Yokohama'];
+const viewAdjust = {lat: -27, long: 4, zoom: 15, offset: -10, pitch: -18};
 
 const startingZoom = 8 + viewAdjust.zoom;
 const offset = 15 + viewAdjust.offset;
