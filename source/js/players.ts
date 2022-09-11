@@ -141,10 +141,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Coraphii', {
-    // UTC-5, Day 27, used 3 graces, one day behind
+    // UTC-5, Day 28, used 3 graces, one day behind
     emoji: '🐻‍❄️',
     color: rgb('00dda4'),
-    progress: 0.2,
+    progress: 0.5,
     path: [
       'London',
       'Paris',
@@ -165,10 +165,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('HeartbreakDaisy', {
-    // K V, UTC-7, Day 29
+    // K V, UTC-7, Day 30
     emoji: '🌼',
     color: rgb('FFD139'),
-    progress: 0.75,
     path: [
       'London',
       'Paris',
@@ -191,9 +190,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('@topghost', {
-    // Casey, UTC-7, Day 28, down one grace
+    // Casey, UTC-7, Day 29, down one grace
     emoji: '🙈',
     color: rgb('966bb6'),
+    progress: 0.1,
     path: [
       'London',
       'Paris',
@@ -210,6 +210,7 @@ export const players: Player[] = [
       'Ekaterinburg',
       'Omsk',
       'Irkutsk',
+      'Beijing',
     ],
   }),
   Player.emoji('Dana Callista Lexa', {
@@ -320,7 +321,7 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Michelle S', {
-    // UTC-7, Day 28 (oops), used 2 grace
+    // UTC-7, Day 29, used 2 grace
     emoji: '🍩️',
     color: rgb('A51DE5'),
     progress: 0.4,
@@ -353,10 +354,9 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('two', {
-    // UTC+10, Day 29
+    // UTC+10, Day 30
     emoji: '2️⃣',
     color: rgb('139DFE'),
-    progress: 0.95,
     path: [
       'London',
       'Paris',
@@ -445,7 +445,7 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Rain Doggerel', {
-    // UTC-7, Day 28, used 2 grace
+    // UTC-7, Day 29, used 2 grace
     emoji: '☣️',
     color: rgb('14bccc'),
     path: [
@@ -547,10 +547,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('WulfOrc', {
-    // Cliff, UTC-7, Day 28, three graces used
+    // Cliff, UTC-7, Day 29, three graces used
     emoji: '🦀',
     color: rgb('e23b59'),
-    progress: 0.25,
+    progress: 0.55,
     path: [
       'London',
       'Paris',
@@ -568,9 +568,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 29
+    // UTC+1, Day 30
     emoji: '😼',
     color: rgb('fa46f4'),
+    progress: 0.4,
     path: [
       'London',
       'Paris',
@@ -586,6 +587,7 @@ export const players: Player[] = [
       'Muscat',
       'Bombay',
       'Bangalore',
+      'Madras',
     ],
   }),
   Player.emoji('Ronja', {
@@ -669,10 +671,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 29
+    // UTC-7, Day 31 (didn't save until 4am Day 32 ><)
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    progress: 0.8,
+    progress: 0.9,
     path: [
       'London',
       'Paris',
@@ -716,9 +718,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('wing', {
-    // UTC-7, Day 27, used 1 grace
+    // UTC-7, Day 30, used 1 grace
     emoji: '🥑',
     color: rgb('008080'),
+    progress: 0.3,
     path: [
       'London',
       'Paris',
@@ -736,6 +739,7 @@ export const players: Player[] = [
       'Karimskaya',
       'Beijing',
       'Hong Kong',
+      'Yokohama',
     ],
   }),
   Player.emoji('bcj', {
