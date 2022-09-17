@@ -191,8 +191,8 @@ export const players: Player[] = [
       'Agra',
       'Calcutta',
       'Chittagong',
-      'Hong Kong',
       'Singapore',
+      'Hong Kong',
     ],
   }),
   Player.emoji('@topghost', {
