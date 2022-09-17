@@ -167,10 +167,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('HeartbreakDaisy', {
-    // K V, UTC-7, Day 35, one grace used
+    // K V, UTC-7, Day 36, one grace used
     emoji: '🌼',
     color: rgb('FFD139'),
-    progress: 0.98,
+    progress: 0.1,
     path: [
       'London',
       'Paris',
@@ -191,6 +191,7 @@ export const players: Player[] = [
       'Agra',
       'Calcutta',
       'Chittagong',
+      'Hong Kong',
       'Singapore',
     ],
   }),
