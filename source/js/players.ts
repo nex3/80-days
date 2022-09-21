@@ -141,10 +141,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Coraphii', {
-    // UTC-5, Day 36, used 3 graces, two days behind
+    // UTC-5, Day 38, used 3 graces, two days behind
     emoji: '🐻‍❄️',
     color: rgb('00dda4'),
-    progress: 0.1,
+    progress: 0.4,
     path: [
       'London',
       'Paris',
@@ -168,10 +168,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('HeartbreakDaisy', {
-    // K V, UTC-7, Day 38, one grace used
+    // K V, UTC-7, Day 39, one grace used
     emoji: '🌼',
     color: rgb('FFD139'),
-    progress: 0.65,
+    progress: 0.9,
     path: [
       'London',
       'Paris',
@@ -367,10 +367,9 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('two', {
-    // twotwos, UTC+10, Day 39
+    // twotwos, UTC+10, Day 40
     emoji: '2️⃣',
     color: rgb('139DFE'),
-    progress: 0.8,
     path: [
       'London',
       'Paris',
@@ -502,10 +501,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Mallumet', {
-    // UTC-5, Day 37, one grace used
+    // UTC-5, Day 39, one grace used
     emoji: '🤖',
     color: rgb('44ad9c'),
-    progress: 0.48,
+    progress: 0.58,
     path: [
       'London',
       'Paris',
@@ -559,10 +558,10 @@ export const players: Player[] = [
     path: ['London', 'Paris'],
   }),
   Player.emoji('jebwrench', {
-    // UTC-4, Day 39
+    // UTC-4, Day 40
     emoji: '🐧',
     color: rgb('ff5cd6'),
-    progress: 0.3,
+    progress: 0.45,
     path: [
       'London',
       'Paris',
@@ -611,10 +610,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 39
+    // UTC+1, Day 40
     emoji: '😼',
     color: rgb('fa46f4'),
-    progress: 0.25,
     path: [
       'London',
       'Paris',
@@ -728,10 +726,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 39
+    // UTC-7, Day 40
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    progress: 0.7,
     path: [
       'London',
       'Paris',
