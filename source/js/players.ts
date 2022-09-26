@@ -141,10 +141,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Coraphii', {
-    // UTC-5, Day 41, used 3 graces, two days behind
+    // UTC-5, Day 42, used 3 graces, two days behind
     emoji: '🐻‍❄️',
     color: rgb('00dda4'),
-    progress: 0.15,
+    progress: 0.6,
     path: [
       'London',
       'Paris',
@@ -169,10 +169,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('HeartbreakDaisy', {
-    // K V, UTC-7, Day 43, one grace used
+    // K V, UTC-7, Day 44, one grace used
     emoji: '🌼',
     color: rgb('FFD139'),
-    progress: 0.75,
     path: [
       'London',
       'Paris',
@@ -258,10 +257,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Rushfoil', {
-    // UTC+1, Day 44, used one grace
+    // UTC+1, Day 45, used one grace
     emoji: '🐇',
     color: rgb('7e8c8f'),
-    progress: 0.15,
+    progress: 0.45,
     path: [
       'London',
       'Paris',
@@ -291,9 +290,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Ari-topper', {
-    // Delphine, UTC+2, Day 43, used one grace
+    // Delphine, UTC+2, Day 44, used one grace
     emoji: '🌻',
     color: rgb('8773d3'),
+    progress: 0.15,
     path: [
       'London',
       'Paris',
@@ -319,6 +319,7 @@ export const players: Player[] = [
       'Singapore',
       'Manila',
       'Honolulu',
+      'Acapulco',
     ],
   }),
   Player.emoji('Modulusshift', {
@@ -377,10 +378,9 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('two', {
-    // twotwos, UTC+10, Day 44
+    // twotwos, UTC+10, Day 45
     emoji: '2️⃣',
     color: rgb('139DFE'),
-    progress: 0.7,
     path: [
       'London',
       'Paris',
@@ -485,10 +485,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Rain Doggerel', {
-    // UTC-7, Day 43, used 2 grace
+    // UTC-7, Day 44, used 2 grace
     emoji: '☣️',
     color: rgb('14bccc'),
-    progress: 0.45,
+    progress: 0.75,
     path: [
       'London',
       'Paris',
@@ -515,10 +515,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Mallumet', {
-    // UTC-5, Day 43, two graces used
+    // UTC-5, Day 44, two graces used
     emoji: '🤖',
     color: rgb('44ad9c'),
-    progress: 0.89,
+    progress: 0.95,
     path: [
       'London',
       'Paris',
@@ -573,10 +573,10 @@ export const players: Player[] = [
     path: ['London', 'Paris'],
   }),
   Player.emoji('jebwrench', {
-    // UTC-4, Day 44
+    // UTC-4, Day 45
     emoji: '🐧',
     color: rgb('ff5cd6'),
-    progress: 0.66,
+    progress: 0.9,
     path: [
       'London',
       'Paris',
@@ -626,10 +626,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 44
+    // UTC+1, Day 45
     emoji: '😼',
     color: rgb('fa46f4'),
-    progress: 0.05,
+    progress: 0.15,
     path: [
       'London',
       'Paris',
@@ -652,7 +652,7 @@ export const players: Player[] = [
       'Singapore',
       'Batavia',
       'Port Moresby',
-      'Auckland',
+      'Pitcairn Island',
     ],
   }),
   Player.emoji('Ronja', {
@@ -684,7 +684,7 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam'],
   }),
   Player.emoji('@garak', {
-    // UTC-5, Day 42 (43?)
+    // UTC-5, Day 44
     emoji: 'ꙮ',
     color: rgb('6bec58'),
     path: [
@@ -716,6 +716,7 @@ export const players: Player[] = [
       'Port Royal',
       'Havana',
       'Miami',
+      'Atlanta',
     ],
   }),
   await Player.image('Liz', {
@@ -748,10 +749,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 44
+    // UTC-7, Day 45
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    progress: 0.75,
     path: [
       'London',
       'Paris',
@@ -863,10 +863,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Zandra', {
-    // UTC-5, Day 43
+    // UTC-5, Day 44
     emoji: '🐭',
     color: rgb('33ccff'),
-    progress: 0.9,
     path: [
       'London',
       'Paris',
