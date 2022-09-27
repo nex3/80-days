@@ -141,10 +141,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Coraphii', {
-    // UTC-5, Day 42, used 3 graces, two days behind
+    // UTC-5, Day 43, used 3 graces, two days behind
     emoji: '🐻‍❄️',
     color: rgb('00dda4'),
-    progress: 0.6,
+    progress: 0.85,
     path: [
       'London',
       'Paris',
@@ -169,9 +169,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('HeartbreakDaisy', {
-    // K V, UTC-7, Day 44, one grace used
+    // K V, UTC-7, Day 46, one grace used
     emoji: '🌼',
     color: rgb('FFD139'),
+    progress: 0.05,
     path: [
       'London',
       'Paris',
@@ -195,6 +196,7 @@ export const players: Player[] = [
       'Singapore',
       'Hong Kong',
       'Yokohama',
+      'San Francisco',
     ],
   }),
   Player.emoji('@topghost', {
@@ -257,10 +259,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Rushfoil', {
-    // UTC+1, Day 45, used one grace
+    // UTC+1, Day 46, used one grace
     emoji: '🐇',
     color: rgb('7e8c8f'),
-    progress: 0.45,
+    progress: 0.65,
     path: [
       'London',
       'Paris',
@@ -378,7 +380,7 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('two', {
-    // twotwos, UTC+10, Day 45
+    // twotwos, UTC+10, Day 46
     emoji: '2️⃣',
     color: rgb('139DFE'),
     path: [
@@ -402,6 +404,7 @@ export const players: Player[] = [
       'Panama City',
       'Acapulco',
       'Houston',
+      'Havana',
     ],
   }),
   Player.emoji('Brian P', {
@@ -515,10 +518,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Mallumet', {
-    // UTC-5, Day 44, two graces used
+    // UTC-5, Day 45, two graces used
     emoji: '🤖',
     color: rgb('44ad9c'),
-    progress: 0.95,
     path: [
       'London',
       'Paris',
@@ -625,10 +627,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 45
+    // UTC+1, Day 46
     emoji: '😼',
     color: rgb('fa46f4'),
-    progress: 0.15,
+    progress: 0.5,
     path: [
       'London',
       'Paris',
@@ -747,9 +749,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 45
+    // UTC-7, Day 46
     emoji: '🌿',
     color: Cesium.Color.BLUE,
+    progress: 0.3,
     path: [
       'London',
       'Paris',
@@ -772,6 +775,7 @@ export const players: Player[] = [
       'Auckland',
       'Pitcairn Island',
       'Lima',
+      'Asunción',
     ],
   }),
   Player.emoji('RAT', {
