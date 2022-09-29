@@ -630,9 +630,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 47
+    // UTC+1, Day 48
     emoji: '😼',
     color: rgb('fa46f4'),
+    progress: 0.2,
     path: [
       'London',
       'Paris',
@@ -656,6 +657,7 @@ export const players: Player[] = [
       'Batavia',
       'Port Moresby',
       'Pitcairn Island',
+      'Santiago',
     ],
   }),
   Player.emoji('Ronja', {
@@ -753,10 +755,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 47
+    // UTC-7, Day 48
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    progress: 0.6,
+    progress: 0.8,
     path: [
       'London',
       'Paris',
