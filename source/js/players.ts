@@ -141,10 +141,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Coraphii', {
-    // UTC-5, Day 50, used 3 graces, two days behind
+    // UTC-5, Day 51, used 3 graces, two days behind
     emoji: '🐻‍❄️',
     color: rgb('00dda4'),
-    progress: 0.5,
+    progress: 0.58,
     path: [
       'London',
       'Paris',
@@ -347,10 +347,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Michelle S', {
-    // UTC-7, Day 49, used 3 grace, three days behind
+    // UTC-7, Day 50, used 3 grace, three days behind
     emoji: '🍩️',
     color: rgb('A51DE5'),
-    progress: 0.85,
     path: [
       'London',
       'Paris',
@@ -382,10 +381,9 @@ export const players: Player[] = [
     path: ['London', 'Paris', 'Amsterdam', 'Munich'],
   }),
   Player.emoji('two', {
-    // twotwos, UTC+10, Day 53
+    // twotwos, UTC+10, Day 54
     emoji: '2️⃣',
     color: rgb('139DFE'),
-    progress: 0.74,
     path: [
       'London',
       'Paris',
@@ -495,7 +493,7 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Rain Doggerel', {
-    // UTC-7, Day 52, used 2 grace
+    // UTC-7, Day 53, used 2 grace
     emoji: '☣️',
     color: rgb('14bccc'),
     path: [
@@ -586,7 +584,7 @@ export const players: Player[] = [
     // UTC-4, Day 53
     emoji: '🐧',
     color: rgb('ff5cd6'),
-    progress: 0.05,
+    progress: 0.15,
     path: [
       'London',
       'Paris',
@@ -638,10 +636,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 53
+    // UTC+1, Day 54
     emoji: '😼',
     color: rgb('fa46f4'),
-    progress: 0.8,
+    progress: 0.01,
     path: [
       'London',
       'Paris',
@@ -667,6 +665,7 @@ export const players: Player[] = [
       'Pitcairn Island',
       'Santiago',
       'Buenos Aires',
+      'Rio de Janeiro',
     ],
   }),
   Player.emoji('Ronja', {
@@ -769,10 +768,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 53
+    // UTC-7, Day 54
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    progress: 0.15,
+    progress: 0.45,
     path: [
       'London',
       'Paris',
