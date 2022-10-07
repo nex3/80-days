@@ -141,10 +141,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Coraphii', {
-    // UTC-5, Day 52, used 3 graces, two days behind
+    // UTC-5, Day 54, used 3 graces, two days behind
     emoji: '🐻‍❄️',
     color: rgb('00dda4'),
-    progress: 0.6,
+    progress: 0.65,
     path: [
       'London',
       'Paris',
@@ -226,10 +226,9 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Dana Callista Lexa', {
-    // UTC-5, Day 54, used two graces
+    // UTC-5, Day 56, used two graces
     emoji: '☕',
     color: rgb('8E562E'),
-    progress: 0.9,
     path: [
       'London',
       'Paris',
@@ -389,7 +388,6 @@ export const players: Player[] = [
     // twotwos, UTC+10, Day 55
     emoji: '2️⃣',
     color: rgb('139DFE'),
-    progress: 0.2,
     path: [
       'London',
       'Paris',
@@ -643,10 +641,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Athene', {
-    // UTC+1, Day 55
+    // UTC+1, Day 58
     emoji: '😼',
     color: rgb('fa46f4'),
-    progress: 0.45,
+    progress: 0.9,
     path: [
       'London',
       'Paris',
@@ -775,10 +773,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 55
+    // UTC-7, Day 56
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    progress: 0.8,
+    progress: 0.3,
     path: [
       'London',
       'Paris',
@@ -804,6 +802,7 @@ export const players: Player[] = [
       'Asunción',
       'Buenos Aires',
       'Rio de Janeiro',
+      'Freetown',
     ],
   }),
   Player.emoji('RAT', {
