@@ -167,7 +167,8 @@ export type CityName =
   | 'Yadanabon'
   | 'Yokohama'
   | 'Zurich'
-  | '???';
+  | '???'
+  | 'Atlantis';
 
 export interface City {
   name: CityName;
@@ -345,6 +346,7 @@ export const cities: City[] = [
   {name: 'Yokohama', lat: 35.4437, long: 139.638},
   {name: 'Zurich', lat: 47.3769, long: 8.5417},
   {name: '???', lat: -7.2088, long: 85},
+  {name: 'Atlantis', lat: 2, long: -20},
 ];
 
 export const citiesByName = {} as Record<CityName, City>;
