@@ -802,10 +802,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Natalie', {
-    // UTC-7, Day 63
+    // UTC-7, Day 64
     emoji: '🌿',
     color: Cesium.Color.BLUE,
-    progress: 0.35,
+    progress: 0.5,
     path: [
       'London',
       'Paris',
