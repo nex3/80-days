@@ -95,6 +95,7 @@ export type CityName =
   | 'Moscow'
   | 'Munich'
   | 'Muscat'
+  | 'Nanortalik'
   | 'Nassau'
   | 'New Orleans'
   | 'New York'
@@ -273,6 +274,7 @@ export const cities: City[] = [
   {name: 'Moscow', lat: 55.7558, long: 37.6173},
   {name: 'Munich', lat: 48.1351, long: 11.582},
   {name: 'Muscat', lat: 23.588, long: 58.3829},
+  {name: 'Nanortalik', lat: 60.1425, long: -45.2395},
   {name: 'Nassau', lat: 25.0443, long: -77.3504},
   {name: 'New Orleans', lat: 29.9511, long: -90.0715},
   {name: 'New York', lat: 40.7128, long: -74.006},
