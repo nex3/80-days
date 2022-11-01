@@ -31,7 +31,7 @@ real-world days!
 
 **Buddy buddy** (most similar routes): RAT 🐀 and Brian P :/
 
-**Keepaway** (most different routes): HeartbreakDaisy 🌼 and bcj 👻
+**Keepaway** (most different routes): Coraphii 🐻‍❄️ and Dana Callista Lexa ☕
 
 **Last mile is the hardest** (made it farthest before giving up): Michelle S 🍩️
 
@@ -68,7 +68,7 @@ Capricorn): Athene 😼 (36.6%)
 Lexa ☕ (75.4%)
 
 **King of the north** (highest percent of distance spent above the tropic of
-Cancer): BibliovoreOrc 📚 (86.1%)
+Cancer): Coraphii 🐻‍❄️ (86.8%)
 
 **Skin of your teeth** (returned to London exactly 80 days after departing):
 wing 🥑

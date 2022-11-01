@@ -150,7 +150,8 @@ export const players: Player[] = [
     // UTC-5, Day 70, used 3 graces, four days behind
     emoji: '🐻‍❄️',
     color: rgb('00dda4'),
-    progress: 0.3,
+    day: 92,
+    cash: 1954,
     path: [
       'London',
       'Paris',
@@ -179,6 +180,12 @@ export const players: Player[] = [
       'Omaha',
       'Burlington',
       'New Orleans',
+      'Atlanta',
+      'Washington',
+      'New York',
+      'Reykjavik',
+      'New York',
+      'London',
     ],
   }),
   Player.emoji('HeartbreakDaisy', {
