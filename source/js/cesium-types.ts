@@ -21,4 +21,10 @@ declare module 'cesium' {
     getValue(): any;
     setValue(value: any): void;
   }
+
+  interface PolylinePipeline {
+    generateArc(options: {positions: Cartesian3[]}): number[];
+  }
+
+  const PolylinePipeline: PolylinePipeline;
 }

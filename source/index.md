@@ -17,6 +17,84 @@ real-world days!
 
 <div id="cesiumContainer"></div>
 
+## The Results
+
+### Winners
+
+**First place**: RAT 🐀 journeyed around the world in 36 days
+
+**Second place**: Brian P :/ journeyed around the world in 41 days
+
+**Third place**: Garak ꙮ journeyed around the world in 52 days
+
+### Achievements
+
+**Buddy buddy** (most similar routes): RAT 🐀 and Brian P :/
+
+**Keepaway** (most different routes): HeartbreakDaisy 🌼 and bcj 👻
+
+**Last mile is the hardest** (made it farthest before giving up): Michelle S 🍩️
+
+**Never mind** (didn't even leave London): Tomato 🍅
+
+**Moneybags** (most money upon returning home): Tekgo 💖 (£6,248)
+
+**Sans le sou dessus** (least money upon returning home): Rushfoil 🐇 (£31)
+
+**World traveler** (visited most cities): bcj 👻 (33)
+
+**Can't stop won't stop** (visited fewest cities): RAT 🐀 (20)
+
+**Meanderer** (most distance traveled): wing 🥑 (60,910.5km)
+
+**Beeliner** (least distance traveled): Liz 🦭 (43,004.3km)
+
+**Are we there yet** (longest single leg): Brisbane → Lima by Tekgo 💖 and Dana Callista Lexa ☕ (13,012.4km)
+
+**Am I there yet** (longest leg traveled alone): Port Moresby → Pitcairn Island by Athene 😼 (9,023.1km)
+
+**Hop skip & jump** (shortest single leg): Allahabad -> Benares by Liz 🦭 (114.km)
+
+**Global south** (highest percent of distance spent in the southern hemisphere):
+Natalie 🌿 (77.4%)
+
+**New world wanderer** (highest percent of distance spent in the western
+hemisphere): Tekgo 💖 (56.9%)
+
+**Aunt arctic** (highest percent of distance spent below the tropic of
+Capricorn): Athene 😼 (36.6%)
+
+**Sunbather** (highest percent of distance spent in the tropics): Dana Callista
+Lexa ☕ (75.4%)
+
+**King of the north** (highest percent of distance spent above the tropic of
+Cancer): BibliovoreOrc 📚 (86.1%)
+
+**Skin of your teeth** (returned to London exactly 80 days after departing):
+wing 🥑
+
+**Namesake** (visited a city that matches your name): Athene 😼 (Athens)
+
+**Homecoming** (hit 80 days en route to your IRL hometown): Zandra 🐭 (Quebec
+City)
+
+**Sole visitor** (only player to visit a given city):
+* BibliovoreOrc 📚: San Pedro, Las Vegas, Albuquerque, Dallas, Bloemfontein
+* bcj 👻: Regina, Winnipeg, Winisk, Ivujivik, Nanortalik
+* Coraphii 🐻‍❄️: Salt Lake City, Cheyenne, Omaha, Burlington
+* Liz 🦭: Dubrovnik, Meteora Valley, Allahabad
+* wing 🥑: Belém, Timbuktu
+* HeartbreakDaisy 🌼: Freetown
+* topghost 🙈: Vladivostok
+* Rushfoil 🐇: Aden
+* Tekgo 💖: Kristiania
+* Athene 😼: Santiago
+* Garak ꙮ: Miami
+* Zandra 🐭: Quebec City
+
+**Most visited optional cities** (counting only players who finished): Honolulu
+(10), Manila/Singapore (9), Amsterdam/Munich/Washington (8)
+
 ## How to Run the Race
 
 Every day, you should play through about one day of in-game time and then send a

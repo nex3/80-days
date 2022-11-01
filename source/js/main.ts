@@ -4,6 +4,7 @@ window.CESIUM_BASE_URL = '/Cesium';
 
 import * as Cesium from 'cesium';
 import {upperCase} from 'upper-case';
+import {getPatch} from 'fast-array-diff';
 
 import {City, CityName, cities, citiesByName} from './cities';
 import {Player, playersByCity, players} from './players';
@@ -237,3 +238,221 @@ viewer.selectedEntityChanged.addEventListener(entity => {
     entity.point!.outlineWidth!.setValue(1);
   }
 });
+
+// declare global {
+//   var finished: any;
+// }
+
+// const finished = window.finished = players.filter(player => player.path.length > 1 && player.path[player.path.length - 1] === 'London');
+
+// const countByCityF: Record<string, number> = {};
+// for (const player of finished) {
+//   for (const city of player.path) {
+//     countByCityF[city] ??= 0;
+//     countByCityF[city]++;
+//   }
+// }
+
+// console.log([...cities].sort((a, b) => (countByCityF[b.name] ?? 0) - (countByCityF[a.name] ?? 0)).slice(0, 20).map(c => `${c.name}: ${countByCityF[c.name]}`));
+
+// const countByCityA: Record<string, number> = {};
+// for (const player of players) {
+//   for (const city of player.path) {
+//     countByCityA[city] ??= 0;
+//     countByCityA[city]++;
+//   }
+// }
+
+// for (const player of players) {
+//   for (const city of player.path) {
+//     if (countByCityA[city] === 1) {
+//       console.log(`${player.name} was the only player to visit ${city}`);
+//     }
+//   }
+// }
+
+// function diffDistance<T>(items1: T[], items2: T[]): number {
+//   return getPatch(items1, items2).reduce((sum, patch) => sum + patch.items.length, 0);
+// }
+
+// let mostDifferentRoute: [Player|null, Player|null, number] = [null, null, 0];
+// let mostSimilarRoute: [Player|null, Player|null, number] = [null, null, Infinity];
+// for (const player1 of finished) {
+//   for (const player2 of finished) {
+//     if (player1 === player2) continue;
+//     const distance = diffDistance(player1.path, player2.path);
+//     if (distance < mostSimilarRoute[2]) {
+//       mostSimilarRoute = [player1, player2, distance];
+//     }
+//     if (distance > mostDifferentRoute[2]) {
+//       mostDifferentRoute = [player1, player2, distance];
+//     }
+//   }
+// }
+
+// console.log(`Most similar route: ${mostSimilarRoute[0]?.name} and ${mostSimilarRoute[1]?.name}`);
+// console.log(`Most different route: ${mostDifferentRoute[0]?.name} and ${mostDifferentRoute[1]?.name}`);
+
+// function maxBy<E>(array: E[], fn: (element: E) => number): E {
+//   let result = null;
+//   let metric = -Infinity;
+//   for (const element of array) {
+//     const newMetric = fn(element);
+//     if (newMetric > metric) {
+//       result = element;
+//       metric = newMetric;
+//     }
+//   }
+//   return result!;
+// }
+
+// function minBy<E>(array: E[], fn: (element: E) => number): E {
+//   return maxBy(array, e => -fn(e));
+// }
+
+// const poorest = minBy(finished, player => player.cash!);
+// const richest = maxBy(finished, player => player.cash!);
+// console.log(`Poorest player: ${poorest.name}`);
+// console.log(`Richest player: ${richest.name}`);
+
+// const mostTravelled = maxBy(finished, player => new Set(player.path).size);
+// const leastTravelled = minBy(finished, player => new Set(player.path).size);
+// console.log(`${mostTravelled.name} visited the most cities (${new Set(mostTravelled.path).size})`);
+// console.log(`${leastTravelled.name} visited the fewest cities (${new Set(leastTravelled.path).size})`);
+
+// function degToRad(value: number): number {
+//   return value / 360 * Math.PI * 2;
+// }
+
+// function pointDistance([lat1, long1]: [number, number], [lat2, long2]: [number, number]): number {
+//   const earthRadius = 6371;
+//   lat1 = degToRad(lat1);
+//   lat2 = degToRad(lat2);
+//   return earthRadius * Math.acos(Math.sin(lat1) * Math.sin(lat2) + Math.cos(lat1) * Math.cos(lat2) * Math.cos(Math.abs(degToRad(long1) - degToRad(long2))));
+// }
+
+// function cityDistance(city1: City, city2: City): number {
+//   return pointDistance([city1.lat, city1.long], [city2.lat, city2.long]);
+// }
+
+// interface Leg {
+//   start: City;
+//   end: City;
+//   distance: number;
+//   players: Set<Player>;
+// }
+
+// const legs = new Map<string, Map<string, Leg>>();
+// for (const player of players) {
+//   for (let i = 0; i < player.path.length - 1; i++) {
+//     if (i === player.path.length - 2 && player.progress) continue;
+//     const start = citiesByName[player.path[i]];
+//     const end = citiesByName[player.path[i + 1]];
+
+//     if (!legs.has(start.name)) legs.set(start.name, new Map());
+//     const mid = legs.get(start.name)!;
+
+//     let leg = mid.get(end.name);
+//     if (!leg) {
+//       const distance = cityDistance(start, end);
+//       leg = {start, end, distance, players: new Set()};
+//       mid.set(end.name, leg);
+//     }
+//     leg.players.add(player);
+//   }
+// }
+// const allLegs = [...legs.values()].flatMap(map => [...map.values()]);
+
+// const longest = maxBy(allLegs, leg => leg.distance);
+// const longestAlone = maxBy([...allLegs.filter(leg => leg.players.size === 1)], leg => leg.distance);
+// const shortest = minBy(allLegs, leg => leg.distance);
+
+// console.log(`Longest leg: ${longest.start.name} -> ${longest.end.name} by ${[...longest.players].map(p => p.name).join(', ')} (${longest.distance}km)`);
+
+// console.log(`Longest unique leg: ${longestAlone.start.name} -> ${longestAlone.end.name} by ${[...longestAlone.players].map(p => p.name).join(', ')} (${longestAlone.distance}km)`);
+
+// console.log(`Shortest leg: ${shortest.start.name} -> ${shortest.end.name} by ${[...shortest.players].map(p => p.name).join(', ')} (${shortest.distance}km)`);
+
+// const totalDistances: Record<string, number> = {};
+// for (const player of players) {
+//   let totalDistance = 0;
+//   for (let i = 0; i < player.path.length - 1; i++) {
+//     totalDistance += legs.get(player.path[i])?.get(player.path[i + 1])?.distance ?? 0;
+//   }
+//   totalDistances[player.name] = totalDistance;
+// }
+
+// const longestD = maxBy(finished, player => totalDistances[player.name]!);
+// const shortestD = minBy(finished, player => totalDistances[player.name]!);
+// console.log(`Longest distance: ${longestD.name} (${totalDistances[longestD.name]}km)`);
+// console.log(`Shortest distance: ${shortestD.name} (${totalDistances[shortestD.name]}km)`);
+
+// function cityDistanceWithinLats(city1: City, city2: City, min: number, max: number): number {
+//   if (city1.lat > max && city2.lat > max) return 0;
+//   if (city1.lat < min && city2.lat < min) return 0;
+
+//   const slope = (city2.long - city1.long)/(city2.lat - city1.lat);
+//   const intercept = city1.long - slope * city1.lat;
+
+//   const lat1 = Math.max(city1.lat, min);
+//   const long1 = slope * lat1 + intercept;
+
+//   const lat2 = Math.min(city2.lat, max);
+//   const long2 = slope * lat2 + intercept;
+
+//   return pointDistance([lat1, long1], [lat2, long2]);
+// }
+
+// function cityDistanceWithinLongs(city1: City, city2: City, min: number, max: number): number {
+//   if (city1.long > max && city2.long > max) return 0;
+//   if (city1.long < min && city2.long < min) return 0;
+
+//   const slope = (city2.lat - city1.lat)/(city2.long - city1.long);
+//   const intercept = city1.lat - slope * city1.long;
+
+//   const long1 = Math.max(city1.long, min);
+//   const lat1 = slope * long1 + intercept;
+
+//   const long2 = Math.min(city2.long, max);
+//   const lat2 = slope * long2 + intercept;
+
+//   return pointDistance([lat1, long1], [lat2, long2]);
+// }
+
+// const distanceSouth: Record<string, number> = {};
+// const distanceSubtrop: Record<string, number> = {};
+// const distanceTrop: Record<string, number> = {};
+// const distanceSupertrop: Record<string, number> = {};
+// const distanceWest: Record<string, number> = {};
+// for (const player of players) {
+//   let southernHemisphere = 0;
+//   let belowCapricorn = 0;
+//   let tropics = 0;
+//   let aboveCancer = 0;
+//   let westernHemisphere = 0;
+//   for (let i = 0; i < player.path.length - 1; i++) {
+//     const start = citiesByName[player.path[i]];
+//     const end = citiesByName[player.path[i + 1]];
+//     southernHemisphere += cityDistanceWithinLats(start, end, -90, 0);
+//     belowCapricorn += cityDistanceWithinLats(start, end, -90, -23.43632);
+//     tropics += cityDistanceWithinLats(start, end, -23.43632, 23.43632);
+//     aboveCancer += cityDistanceWithinLats(start, end, 23.43632, 90);
+//     westernHemisphere += cityDistanceWithinLongs(start, end, -90, 0);
+//   }
+//   distanceSouth[player.name] = southernHemisphere;
+//   distanceSubtrop[player.name] = belowCapricorn;
+//   distanceTrop[player.name] = tropics;
+//   distanceSupertrop[player.name] = aboveCancer;
+//   distanceWest[player.name] = westernHemisphere;
+// }
+
+// function printPercentiest(distances: Record<string, number>, name: string): void {
+//   const mostest = maxBy(finished, player => distances[player.name]! / totalDistances[player.name]!);
+//   console.log(`${name} player: ${mostest.name} (${distances[mostest.name]! / totalDistances[mostest.name]!}%)`);
+// }
+
+// printPercentiest(distanceSouth, 'Southest');
+// printPercentiest(distanceSubtrop, 'Subtropical');
+// printPercentiest(distanceTrop, 'Tropical');
+// printPercentiest(distanceSupertrop, 'Supertropical');
+// printPercentiest(distanceWest, 'Westest');

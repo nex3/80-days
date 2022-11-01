@@ -9,6 +9,7 @@ interface PlayerOptions {
   path: CityName[];
   emoji?: string;
   progress?: number;
+  cash?: number;
 }
 
 export class Player {
@@ -17,6 +18,7 @@ export class Player {
   readonly color: Cesium.Color;
   readonly path: CityName[];
   readonly progress?: number;
+  readonly cash?: number;
 
   private constructor(
     name: string,
@@ -28,6 +30,7 @@ export class Player {
     this.path = options.path;
     this.pin = options.pin;
     this.progress = options.progress;
+    this.cash = options.cash;
   }
 
   static emoji(name: string, options: PlayerOptions & {emoji: string}): Player {
@@ -178,7 +181,7 @@ export const players: Player[] = [
   Player.emoji('HeartbreakDaisy', {
     // K V, UTC-7, Day 73, one grace used
     emoji: '🌼',
-    color: rgb('FFD139'),
+    color: rgb('FFD139'), cash: 2847,
     path: [
       'London',
       'Paris',
@@ -242,6 +245,7 @@ export const players: Player[] = [
     // UTC-5, Day 76, used two graces
     emoji: '☕',
     color: rgb('8E562E'),
+cash: 5803,
     path: [
       'London',
       'Paris',
@@ -281,7 +285,7 @@ export const players: Player[] = [
   Player.emoji('Rushfoil', {
     // UTC+1, Day 73, used one grace
     emoji: '🐇',
-    color: rgb('7e8c8f'),
+    color: rgb('7e8c8f'), cash: 31,
     path: [
       'London',
       'Paris',
@@ -318,7 +322,7 @@ export const players: Player[] = [
   Player.emoji('Ari-topper', {
     // Delphine, UTC+2, Day 62, used two grace
     emoji: '🌻',
-    color: rgb('8773d3'),
+    color: rgb('8773d3'), cash: 3214,
     path: [
       'London',
       'Paris',
@@ -412,7 +416,7 @@ export const players: Player[] = [
   Player.emoji('two', {
     // twotwos, UTC+10, Day 58
     emoji: '2️⃣',
-    color: rgb('139DFE'),
+    color: rgb('139DFE'), cash: 1390,
     path: [
       'London',
       'Paris',
@@ -446,7 +450,7 @@ export const players: Player[] = [
   Player.emoji('Brian P', {
     // UTC-4, Day 41 11am
     emoji: ':/',
-    color: rgb('7C8383'),
+    color: rgb('7C8383'), cash: 2900,
     path: [
       'London',
       'Paris',
@@ -475,7 +479,7 @@ export const players: Player[] = [
   Player.emoji('BibliovoreOrc', {
     // Rob, UTC-5, Day 67, one grace used
     emoji: '📚',
-    color: rgb('33FF33'),
+    color: rgb('33FF33'), cash: 3857,
     path: [
       'London',
       'Paris',
@@ -590,7 +594,7 @@ export const players: Player[] = [
   Player.emoji('Tekgo', {
     // UTC-7, Day 73
     emoji: '💖',
-    color: rgb('e60283'),
+    color: rgb('e60283'), cash: 6248,
     path: [
       'London',
       'Paris',
@@ -692,7 +696,7 @@ export const players: Player[] = [
   Player.emoji('Athene', {
     // UTC+1, Day 69
     emoji: '😼',
-    color: rgb('fa46f4'),
+    color: rgb('fa46f4'), cash: 5755,
     path: [
       'London',
       'Paris',
@@ -756,7 +760,7 @@ export const players: Player[] = [
   Player.emoji('@garak', {
     // UTC-5, Day 53, one grace used
     emoji: 'ꙮ',
-    color: rgb('6bec58'),
+    color: rgb('6bec58'), cash: 2152,
     path: [
       'London',
       'Paris',
@@ -797,7 +801,7 @@ export const players: Player[] = [
     // UTC-7, Day 72, one grace used
     emoji: '🦭',
     image: '/images/liz.webp',
-    color: rgb('00637b'),
+    color: rgb('00637b'), cash: 4572,
     path: [
       'London',
       'Paris',
@@ -835,6 +839,7 @@ export const players: Player[] = [
     // UTC-7, Day 68
     emoji: '🌿',
     color: Cesium.Color.BLUE,
+    cash: 2000, // just guessing
     path: [
       'London',
       'Paris',
@@ -869,7 +874,7 @@ export const players: Player[] = [
   Player.emoji('RAT', {
     // piper, UTC-7, Day 36
     emoji: '🐀',
-    color: rgb('70ff61'),
+    color: rgb('70ff61'), cash: 1295,
     path: [
       'London',
       'Paris',
@@ -898,6 +903,7 @@ export const players: Player[] = [
     // UTC-7, Day 80, used 2 graces
     emoji: '🥑',
     color: rgb('008080'),
+     cash: 5320,
     path: [
       'London',
       'Paris',
@@ -936,7 +942,7 @@ export const players: Player[] = [
   Player.emoji('bcj', {
     // UTC-5, Day 70
     emoji: '👻',
-    color: rgb('6600aa'),
+    color: rgb('6600aa'), cash: 6185,
     path: [
       'London',
       'Paris',
@@ -975,10 +981,10 @@ export const players: Player[] = [
     ],
   }),
   Player.emoji('Zandra', {
-    // UTC-5, Day 79
+    // UTC-5, Day 80
     emoji: '🐭',
     color: rgb('33ccff'),
-    progress: 0.5,
+    progress: 0.8,
     path: [
       'London',
       'Paris',
@@ -1005,7 +1011,7 @@ export const players: Player[] = [
       'San Francisco',
       'Gastown',
       'Calgary',
-      'Toronto',
+      'Quebec City',
     ],
   }),
 ];

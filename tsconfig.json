@@ -5,10 +5,10 @@
     "rootDir": ".",
     "useUnknownInCatchVariables": false,
     "declaration": false,
-    "lib": ["dom"],
+    "lib": ["dom", "es2019"],
     "module": "esnext",
     "moduleResolution": "node",
-    "target": "es2017"
+    "target": "es2019"
   },
   "include": [
     "**/*.ts"
