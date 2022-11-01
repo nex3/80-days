@@ -45,9 +45,9 @@ real-world days!
 
 **Can't stop won't stop** (visited fewest cities): RAT 🐀 (20)
 
-**Meanderer** (most distance traveled): wing 🥑 (60,910.5km)
+**Meanderer** (most distance traveled): Dana Callista Lexa ☕ (59,347.6km)
 
-**Beeliner** (least distance traveled): Liz 🦭 (43,004.3km)
+**Beeliner** (least distance traveled): RAT 🐀 (37,508.1km)
 
 **Are we there yet** (longest single leg): Brisbane → Lima by Tekgo 💖 and Dana Callista Lexa ☕ (13,012.4km)
 
