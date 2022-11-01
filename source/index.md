@@ -73,6 +73,10 @@ Cancer): BibliovoreOrc 📚 (86.1%)
 **Skin of your teeth** (returned to London exactly 80 days after departing):
 wing 🥑
 
+**Speed racer** (fastest average speed): RAT 🐀 (43.4kph)
+
+**Smell the roses** (slowest average speed): bcj 👻 (22.7kph)
+
 **Namesake** (visited a city that matches your name): Athene 😼 (Athens)
 
 **Homecoming** (hit 80 days en route to your IRL hometown): Zandra 🐭 (Quebec
